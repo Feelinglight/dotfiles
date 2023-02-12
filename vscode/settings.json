@@ -1,0 +1,45 @@
+{
+    // Вид для Linux
+    "workbench.colorTheme": "Default Light+",
+
+    "workbench.colorCustomizations" : {
+        "terminal.foreground" : "#FFFFFF",
+        "terminal.background" : "#232629"
+    },
+    "terminal.integrated.fontFamily": "Hack",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontWeight": "normal",
+    "json.schemas": [
+
+    ],
+
+    "workbench.editor.enablePreview": false,
+
+    // Орфография
+    "cSpell.language": "en,ru",
+
+    // Markdown
+    "markdown.extension.list.indentationSize": "inherit",
+    "markdown.extension.orderedList.marker": "one",
+
+    "explorer.confirmDelete": false,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "redhat.telemetry.enabled": false,
+    "ansible.validation.lint.enabled": false,
+
+    // Sphinx
+    "restructuredtext.linter.run": "off",
+    "esbonio.server.hideSphinxOutput": true,
+    "restructuredtext.linter.disabledLinters": [
+        "rstcheck"
+    ],
+
+    // Включает multiedit средним колесом мыши в Linux
+    "editor.selectionClipboard": false,
+
+    "files.trimTrailingWhitespace": true,
+    "files.autoSave": "afterDelay",
+    "editor.rulers": [
+        100
+    ]
+}
