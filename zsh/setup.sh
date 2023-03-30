@@ -1,4 +1,4 @@
-sudo apt install -y git zsh zoxide
+sudo apt install -y git zsh zoxide fzf
 
 # oh-my-zsh
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
