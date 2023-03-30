@@ -113,3 +113,5 @@ function cs () {
     cd $1
     ls
 }
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
