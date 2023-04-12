@@ -115,3 +115,8 @@ function cs () {
 }
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+function pycharm(){
+    nohup pycharm-community "$1" > /dev/null 2>&1 &
+}
+
