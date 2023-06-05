@@ -2,4 +2,4 @@
 
 ./ubuntu_setup.sh
 
-sudo apt install -y qemu-guest-agent spice-vdagent
+sudo apt install -y qemu-guest-agent spice-vdagent openssh-server
