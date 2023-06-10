@@ -3,4 +3,4 @@
 sudo apt update
 sudo apt full-upgrade
 
-sudo apt install -y kubuntu-desktop
+sudo apt install -y kubuntu-desktop neovim
