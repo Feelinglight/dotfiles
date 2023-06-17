@@ -23,9 +23,9 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
-      -- LSP сервер
-    use 'neovim/nvim-lspconfig'
-	
+  -- LSP сервер
+  use 'neovim/nvim-lspconfig'
+
   -- Иконки для автодополнения
   use {
     'onsails/lspkind-nvim',
