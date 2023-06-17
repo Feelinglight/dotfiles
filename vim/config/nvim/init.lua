@@ -1,4 +1,8 @@
+require('plugins/packer_plugins')
+
 require('base/common')
 require('base/view')
-require('plugins/packer_plugins')
+
+require('keys/common')
+require('keys/plugins')
 
