@@ -12,7 +12,11 @@ return require('packer').startup(function(use)
   use 'tpope/vim-sleuth'
   -- Автодополнение
   use 'hrsh7th/nvim-cmp'
-   -- Темная тема
+  -- Стартовая страница
+  use 'mhinz/vim-startify'
+  -- Отображение отступов
+  use 'Yggdroot/indentLine'
+  -- Темная тема
   use 'dracula/vim'
   -- Статус панель внизу
   use {
