@@ -6,3 +6,5 @@ require('base/view')
 require('keys/common')
 require('keys/plugins')
 
+require('plugins/lualine')
+

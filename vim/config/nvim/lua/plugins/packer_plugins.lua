@@ -12,8 +12,13 @@ return require('packer').startup(function(use)
   use 'tpope/vim-sleuth'
   -- Автодополнение
   use 'hrsh7th/nvim-cmp'
-  -- Темна тема
+   -- Темная тема
   use 'dracula/vim'
+  -- Статус панель внизу
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
   -- Менеджер файлов
   use 'preservim/nerdtree'
   -- Комментирование файлов
