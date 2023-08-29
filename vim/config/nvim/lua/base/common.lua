@@ -18,3 +18,10 @@ opt.smartcase = true
 -- Подсвечивать найденные текстовые объекты
 opt.showmatch = true
 
+-- По умолчанию Tab вставляет пробелы
+opt.expandtab = true
+-- На Tab вставляется 2 пробела
+opt.shiftwidth = 2
+-- Табы в файлах отображаются по 4 символа
+opt.tabstop = 4
+
