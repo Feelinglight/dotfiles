@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
   -- Стартовая страница
   use 'mhinz/vim-startify'
   -- Отображение отступов
-  use 'Yggdroot/indentLine'
+  use 'lukas-reineke/indent-blankline.nvim'
   -- Темная тема
   use 'dracula/vim'
   -- Статус панель внизу
