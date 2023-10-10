@@ -37,6 +37,9 @@
     // Включает multiedit средним колесом мыши в Linux
     "editor.selectionClipboard": false,
 
+    // Отключает autocomplete по нажатию Enter
+    "editor.acceptSuggestionOnEnter": "off"
+
     "files.trimTrailingWhitespace": true,
     "files.autoSave": "afterDelay",
     "editor.rulers": [
