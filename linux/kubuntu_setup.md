@@ -134,3 +134,7 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 - Не открываются Параметры системы (ошибка ``open collaboration service (0)``)
 
   Запускать из консоли командой ``LANG=en_US.UTF-8 systemsettings``
+
+- При запуске Dolphin открывается zsh вместо oh-my-zsh
+
+  С этим [нужно жить](https://bugs.kde.org/show_bug.cgi?id=407990)((
