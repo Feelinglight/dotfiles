@@ -112,6 +112,15 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 ~/data/develop/tools_tuning/vim/restore.sh
 ```
 
+
+## vscode
+
+```bash
+cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings.json
+~/data/develop/tools_tuning/vscode/install_extensions.sh
+```
+
+
 ## Konsole
 
 - Настройка -> Создать новый профиль
