@@ -2,13 +2,15 @@
 
 ## Apt
 
-- ``sudo apt update``
-- ``sudo apt full-upgrade``
-- ``sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop 
-  neovim git``
-- ``sudo apt remove ibus`` (для отключения бесполезной иконки EN справа на панели задач)
+```bash
+sudo apt update
+sudo apt full-upgrade
+sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop neovim git
+sudo apt remove -y ibus 
+```
 
-  > После этого лучше перезайти в KDE, т. к. все открытые окна перестанут реагировать на нажатия клавиш
+> ibus удаляется для отключения бесполезной иконки EN справа на панели задач
+> После этого лучше перезайти в KDE, т. к. все открытые окна перестанут реагировать на нажатия клавиш
 
 ## Не apt
 
@@ -16,11 +18,16 @@
   - установить
   - войти в аккаунт google
 - Скачать deb пакет vscode с офф. сайта, установить
-- Скачать tar.gz pycharm-community с офф. сайта, установить
+- Скачать tar.gz pycharm-community с офф. сайта, установить:
 
-  - ``sudo tar xzf pycharm-*.tar.gz -C /opt/``
-  - ``sudo ln -s /opt/pycharm-*/bin/pycharm.sh /usr/local/bin/pycharm-community``
+  ```bash
+  sudo tar xzf pycharm-*.tar.gz -C /opt/
+  sudo ln -s /opt/pycharm-*/bin/pycharm.sh /usr/local/bin/pycharm-community
+  ```
 
+## Папки
+
+- mkdir -p ~/data/develop
 
 ## Параметры системы
 
@@ -61,6 +68,19 @@
     - VScode
     - gnome-calculator
 
+## oh-my-zsh
+
+```bash
+git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
+~/data/develop/tools_tuning/linux/zsh/setup.sh
+```
+
+## nvim
+
+```bash
+git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
+~/data/develop/tools_tuning/linux/zsh/setup.sh
+```
 
 ## Konsole
 
