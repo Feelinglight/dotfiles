@@ -123,7 +123,7 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 
 - Dolphin:
 
-  - Набрать в адресной строке smb://box, smb://5-10 и перенести иконки в левое меню быстрого доступа
+  - Набрать в адресной строке smb://nas1/box, smb://5-10 -> Войти -> ПКМ на пустом месте -> Добавить в "Точки входа"
 
 
 ## Ноутбук
