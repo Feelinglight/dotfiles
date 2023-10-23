@@ -6,6 +6,7 @@
 - ``sudo apt full-upgrade``
 - ``sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop 
   neovim``
+- ``sudo apt remove ibus`` (для отключения бесполезной иконки EN справа на панели задач)
 
 ## Не apt
 
