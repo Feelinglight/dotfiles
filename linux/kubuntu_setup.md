@@ -1,11 +1,13 @@
-sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop
-
-install code from deb
-
-install chrome from deb
-enter chrome account
-
-setup zsh
+- ``sudo apt update``
+- ``sudo apt full-upgrade``
+- ``sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop 
+  neovim``
+- Скачать deb пакет хром с офф. сайта
+  - установить
+  - войти в аккаунт
+- Скачать deb пакет vscode с офф. сайта, установить
+- Скачать tar.gz pycharm-community с офф. сайта, установить
+- Перевойти в KDE
 
 Konsole:
     Добавить новый профиль с путем к терминалу /bin/zsh
@@ -56,4 +58,3 @@ Toolbar:
 Настроить touche + touchegg
     Свайп 3 пальцами - переключить комнату
     В хроме свайп 3 пальцами вправо - средняя кнопка мыши
-
