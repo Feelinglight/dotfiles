@@ -113,7 +113,16 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
   - Поставить галку "Профиль по умолчанию"
   
   - Команда: /bin/zsh
-    
+
+## Dolphin
+
+- В правой панели ПКМ -> Скрыть
+
+  - раздел Поиск
+  - Музыка
+  - Изображения
+  - Видеофайлы
+  - Документы
     
 ## Работа
 
