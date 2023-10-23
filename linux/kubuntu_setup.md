@@ -5,7 +5,7 @@
 - ``sudo apt update``
 - ``sudo apt full-upgrade``
 - ``sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop 
-  neovim``
+  neovim git``
 - ``sudo apt remove ibus`` (для отключения бесполезной иконки EN справа на панели задач)
 
 ## Не apt
@@ -22,11 +22,16 @@
 ## Параметры системы
 
 - Перезайти из gnome в KDE
-- Параметры системы -> Клавиатура:
+- Клавиатура:
   
   - Убедиться, что установлены 2 раскладки клавиатуры (en, ru)
   - Задать комбинацию переключения раскладок **Alt + Shift**
   - Включить NumLock на старте
+
+- Переключение окон
+  
+  - Убрать галку "Показывать выбранное окно"
+  - Выбрать Thumbnail Grid, если не будет в списке, загрузить из kde store
     
 - На втором экране:
 
@@ -65,9 +70,6 @@ Konsole:
     * 
      
 
-    Переключение окон:
-        Убрать "Показывать выбранное окно"
-        Выбрать Thumbnail Grid, если не будет работать, загрузить из kde store
     Общие папки Windows:
         IRS\503 + domain password
 
