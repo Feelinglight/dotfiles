@@ -5,7 +5,7 @@
 ```bash
 sudo apt update
 sudo apt full-upgrade
-sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop neovim git
+sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop git
 sudo apt remove -y ibus 
 ```
 
