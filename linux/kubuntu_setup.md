@@ -137,4 +137,4 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 
 - При запуске Dolphin открывается zsh вместо oh-my-zsh
 
-  С этим [нужно жить](https://bugs.kde.org/show_bug.cgi?id=407990)((
+  [С этим нужно жить](https://bugs.kde.org/show_bug.cgi?id=407990)((
