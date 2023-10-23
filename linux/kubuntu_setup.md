@@ -12,6 +12,7 @@ sudo apt remove -y ibus
 > ibus удаляется для отключения бесполезной иконки EN справа на панели задач
 > После этого лучше перезайти в KDE, т. к. все открытые окна перестанут реагировать на нажатия клавиш
 
+
 ## Не apt
 
 - Скачать deb пакет хром с офф. сайта
@@ -25,9 +26,13 @@ sudo apt remove -y ibus
   sudo ln -s /opt/pycharm-*/bin/pycharm.sh /usr/local/bin/pycharm-community
   ```
 
+
 ## Папки
 
-- mkdir -p ~/data/develop
+```bash
+mkdir -p ~/data/develop
+```
+
 
 ## Параметры системы
 
@@ -42,6 +47,7 @@ sudo apt remove -y ibus
   
   - Убрать галку "Показывать выбранное окно"
   - Выбрать Thumbnail Grid, если не будет в списке, загрузить из kde store
+
 
 ## Панель задач
 
@@ -68,6 +74,7 @@ sudo apt remove -y ibus
     - VScode
     - gnome-calculator
 
+
 ## oh-my-zsh
 
 ```bash
@@ -75,11 +82,13 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 ~/data/develop/tools_tuning/linux/zsh/setup.sh
 ```
 
+
 ## nvim
 
 ```bash
 git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
-~/data/develop/tools_tuning/linux/zsh/setup.sh
+~/data/develop/tools_tuning/vim/restore.sh
+...
 ```
 
 ## Konsole
