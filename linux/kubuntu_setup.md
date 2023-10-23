@@ -1,14 +1,25 @@
 # Установка
 
+## Apt
+
 - ``sudo apt update``
 - ``sudo apt full-upgrade``
 - ``sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop 
   neovim``
+
+## Не apt
+
 - Скачать deb пакет хром с офф. сайта
   - установить
   - войти в аккаунт google
 - Скачать deb пакет vscode с офф. сайта, установить
 - Скачать tar.gz pycharm-community с офф. сайта, установить
+
+  - ``sudo tar xzf pycharm-*.tar.gz -C /opt/``
+  - ``sudo ln -s /opt/pycharm-community-2023.2.3/bin/pycharm.sh /usr/local/bin/pycharm-community``
+
+# Параметры системы
+
 - Перезайти в KDE
 - Параметры системы -> Клавиатура:
   
