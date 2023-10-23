@@ -16,7 +16,7 @@
 - Скачать tar.gz pycharm-community с офф. сайта, установить
 
   - ``sudo tar xzf pycharm-*.tar.gz -C /opt/``
-  - ``sudo ln -s /opt/pycharm-community-2023.2.3/bin/pycharm.sh /usr/local/bin/pycharm-community``
+  - ``sudo ln -s /opt/pycharm-*/bin/pycharm.sh /usr/local/bin/pycharm-community``
 
 ## Параметры системы
 
