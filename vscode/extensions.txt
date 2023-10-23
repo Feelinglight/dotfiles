@@ -3,5 +3,8 @@ lextudio.restructuredtext
 mechatroner.rainbow-csv
 ms-python.python
 ms-python.vscode-pylance
+ritwickdey.LiveServer
 streetsidesoftware.code-spell-checker
 streetsidesoftware.code-spell-checker-russian
+trond-snekvik.simple-rst
+vscodevim.vim
