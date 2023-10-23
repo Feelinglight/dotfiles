@@ -90,9 +90,15 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 ## nvim
 
 ```bash
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+
 git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
+# Тут будет ошибка "тема dracula не найдена", это нормально
 ~/data/develop/tools_tuning/vim/restore.sh
-...
+# Тут ошибки уже не будет
+~/data/develop/tools_tuning/vim/restore.sh
 ```
 
 ## Konsole
