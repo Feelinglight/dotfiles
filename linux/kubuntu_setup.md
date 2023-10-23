@@ -18,9 +18,9 @@
   - ``sudo tar xzf pycharm-*.tar.gz -C /opt/``
   - ``sudo ln -s /opt/pycharm-community-2023.2.3/bin/pycharm.sh /usr/local/bin/pycharm-community``
 
-# Параметры системы
+## Параметры системы
 
-- Перезайти в KDE
+- Перезайти из gnome в KDE
 - Параметры системы -> Клавиатура:
   
   - Убедиться, что установлены 2 раскладки клавиатуры (en, ru)
@@ -56,16 +56,18 @@
 - Решение
   - сделать левый экран главным
 
+- Проблема:
+
+  - Не открываются Параметры системы (ошибка ``open collaboration service (0)``)
+
+- Решение:
+
+  - запускать из консоли командой ``LANG=en_US.UTF-8 systemsettings``
+
 Konsole:
     Добавить новый профиль с путем к терминалу /bin/zsh
     * 
-
-
-
-Settings:
-
-    При ошибке open collaboration service (0) запускать из консоли следующей командой:
-    LANG=en_US.UTF-8 systemsettings
+     
 
     Переключение окон:
         Убрать "Показывать выбранное окно"
