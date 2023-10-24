@@ -44,5 +44,7 @@
     "files.autoSave": "afterDelay",
     "editor.rulers": [
         100
-    ]
+    ],
+    "window.titleBarStyle": "custom",
+    "editor.tabSize": 2,
 }
