@@ -88,6 +88,7 @@ mkdir -p ~/data/develop
     - Konsole
     - VScode
     - gnome-calculator
+    - remmina
 
 
 ## oh-my-zsh
@@ -140,6 +141,14 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
   - Документы
     
 ## Работа
+
+- Настроить remmina
+
+  ```sh
+  sudo apt install -y remmina
+  ```
+
+  - Добавить в remmina подключение к box5
 
 - Параметры системы -> Общие папки Windows:
 
