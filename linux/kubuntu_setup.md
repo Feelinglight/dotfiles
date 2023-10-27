@@ -5,7 +5,9 @@
 ```bash
 sudo apt update
 sudo apt full-upgrade
-sudo apt install -y kubuntu-desktop openssh-server curl zsh virt-manager virt-viewer bat htop git git-gui python3-venv
+sudo apt install -y kubuntu-desktop openssh-server \
+  curl zsh virt-manager virt-viewer bat htop git \
+  git-gui python3-venv python3-pip
 sudo apt remove -y ibus 
 ```
 
