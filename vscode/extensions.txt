@@ -1,8 +1,12 @@
+fabiospampinato.vscode-diff
 janisdd.vscode-edit-csv
+jebbs.plantuml
 lextudio.restructuredtext
+lextudio.restructuredtext-pack
 mechatroner.rainbow-csv
 ms-python.python
 ms-python.vscode-pylance
+ms-vscode.hexeditor
 ritwickdey.LiveServer
 streetsidesoftware.code-spell-checker
 streetsidesoftware.code-spell-checker-russian
