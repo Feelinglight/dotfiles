@@ -4,8 +4,6 @@ local g = vim.g
 
 vim.cmd[[colorscheme dracula]]
 
-opt.number = true
-
-opt.list = true
-opt.listchars = "tab:>~"
+-- opt.list = true
+-- opt.listchars = "tab:>~"
 

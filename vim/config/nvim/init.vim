@@ -48,3 +48,7 @@ imap <C-k> <Esc>
 nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>i
 
+
+" -------------------- Load lua config --------------------
+lua require('init')
+
