@@ -38,7 +38,7 @@ sudo apt remove -y ibus
   ```
 
 
-# NeoVim
+### NeoVim
 
 > В ppa для ubuntu максимальная версия **0.7**, что сильно меньше актуальной.
 
