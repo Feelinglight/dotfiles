@@ -19,12 +19,6 @@ RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appi
 RUN chmod +x nvim.appimage
 RUN mv nvim.appimage /usr/local/bin/nvim
 
-# Nerd fonts
-RUN curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
-RUN tar xf "./JetBrainsMono.tar.xz"
-RUN mkdir -p "/root/.local/share/fonts"
-RUN mv *.ttf "/root/.local/share/fonts"
-RUN fc-cache "/root/.local/share/fonts"
 
 WORKDIR /root
 RUN rm -rf "/root/tools_tuning"
