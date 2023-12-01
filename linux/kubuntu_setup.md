@@ -141,9 +141,10 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 ## nvim
 
 ```bash
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install neovim
+# Установка выше
+# sudo add-apt-repository ppa:neovim-ppa/stable
+# sudo apt-get update
+# sudo apt-get install neovim
 
 git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
 # Тут будет ошибка "тема dracula не найдена", это нормально
@@ -168,6 +169,10 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
   - Поставить галку "Профиль по умолчанию"
   
   - Команда: /bin/zsh
+ 
+- Настройка -> Настроить профиль... -> Внешний вид
+
+  - Выбрать шрифт JetBrainsMono Nerd Font / Regular / 10
 
 ## Dolphin
 
