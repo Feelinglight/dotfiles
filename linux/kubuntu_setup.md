@@ -7,7 +7,7 @@ sudo apt update
 sudo apt full-upgrade
 sudo apt install -y kubuntu-desktop openssh-server \
   curl zsh virt-manager virt-viewer bat htop git \
-  git-gui python3-venv python3-pip
+  git-gui python3-venv python3-pip fontconfig
 sudo apt remove -y ibus 
 ```
 
@@ -17,16 +17,51 @@ sudo apt remove -y ibus
 
 ## Не apt
 
+### Chrome
+
 - Скачать deb пакет хром с офф. сайта
   - установить
   - войти в аккаунт google
+ 
+
+### VS Code
+
 - Скачать deb пакет vscode с офф. сайта, установить
+
+
+### Pycharm
 - Скачать tar.gz pycharm-community с офф. сайта, установить:
 
   ```bash
   sudo tar xzf pycharm-*.tar.gz -C /opt/
   sudo ln -s /opt/pycharm-*/bin/pycharm.sh /usr/local/bin/pycharm-community
   ```
+
+
+# NeoVim
+
+> В ppa для ubuntu максимальная версия **0.7**, что сильно меньше актуальной.
+
+```sh
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod +x nvim.appimage
+mv nvim.appimage /usr/local/bin/nvim
+```
+
+
+### Nerd fonts
+
+```sh
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
+mkdir "./JetBrainsMono"
+tar xf "./JetBrainsMono.tar.xz" -C "./JetBrainsMono"
+
+mkdir -p "~/.local/share/fonts"
+mv "./JetBrainsMono/*.ttf" "~/.local/share/fonts"
+fc-cache "~/.local/share/fonts"
+
+rm -rf "./JetBrainsMono.tar.xz" "./JetBrainsMono"
+```
 
 
 ## Папки
