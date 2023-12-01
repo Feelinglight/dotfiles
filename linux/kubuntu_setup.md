@@ -53,14 +53,14 @@ mv nvim.appimage /usr/local/bin/nvim
 
 ```sh
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
-mkdir "./JetBrainsMono"
-tar xf "./JetBrainsMono.tar.xz" -C "./JetBrainsMono"
+mkdir ./JetBrainsMono
+tar xf ./JetBrainsMono.tar.xz -C ./JetBrainsMono
 
-mkdir -p "~/.local/share/fonts"
-mv "./JetBrainsMono/*.ttf" "~/.local/share/fonts"
-fc-cache "~/.local/share/fonts"
+mkdir -p ~/.local/share/fonts
+mv ./JetBrainsMono/*.ttf ~/.local/share/fonts
+fc-cache ~/.local/share/fonts
 
-rm -rf "./JetBrainsMono.tar.xz" "./JetBrainsMono"
+rm -rf ./JetBrainsMono.tar.xz ./JetBrainsMono
 ```
 
 
