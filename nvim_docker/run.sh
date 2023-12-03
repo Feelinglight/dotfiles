@@ -1,8 +1,10 @@
 #!/bin/bash
 
+set -e
+
 nvim_config_folder="nvim_config"
 
-mkdir "$nvim_config_folder"
+mkdir -p "$nvim_config_folder"
 
 docker run \
   -it \
