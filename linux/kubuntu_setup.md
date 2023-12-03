@@ -172,7 +172,7 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
  
 - Настройка -> Настроить профиль... -> Внешний вид
 
-  - Выбрать шрифт JetBrainsMono Nerd Font / Regular / 10
+  - Выбрать шрифт JetBrainsMonoNL Nerd Font / Regular / 10
 
 ## Dolphin
 
