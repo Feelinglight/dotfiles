@@ -1,4 +1,8 @@
 
+if true then return {
+} 
+end
+
 -- Добавляем Packer как пакет в Neovim
 vim.cmd [[packadd packer.nvim]]
 

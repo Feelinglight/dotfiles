@@ -2,9 +2,9 @@
 
 set -e
 
-nvim_config_folder="nvim_config"
+script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-mkdir -p "$nvim_config_folder"
+nvim_config_folder="$script_dir/../config/nvim"
 
 docker run \
   -it \

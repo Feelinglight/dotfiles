@@ -39,10 +39,6 @@ set number
 set list
 set listchars=tab:>~
 
-
-
-
-
 " -------------------- Keybindings --------------------
 
 " Выход из режима вставки по Ctrl+k
@@ -51,13 +47,6 @@ imap <C-k> <Esc>
 " Сохранение на Ctrl+S
 nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>i
-
-
-" ------ [[ Moving ]] ------
-
-" Центрировать экран по курсору после перемещения с помощью Ctrl+d и Ctrl+u
-nmap <C-d> <C-d>zz
-nmap <C-u> <C-u>zz
 
 
 " -------------------- Load lua config --------------------
