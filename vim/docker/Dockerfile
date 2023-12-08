@@ -20,11 +20,11 @@ RUN chmod +x nvim.appimage
 RUN mv nvim.appimage /usr/local/bin/nvim
 
 
-WORKDIR /root
 RUN rm -rf "/root/tools_tuning"
 
 # Для серого шрифта в zsh-autosuggestions
 ENV TERM xterm-256color
 
+WORKDIR "/root/.config/nvim/lua"
 CMD /bin/zsh
 

@@ -35,6 +35,9 @@ set tabstop=4
 " Отображать номера строк
 set number
 
+" Подсвечивать текущую строку
+set cursorline
+
 " Отображать табы как >~~~
 set list
 set listchars=tab:>~
