@@ -1,3 +1,4 @@
+require("config/autocmds")
 require("config.lazy")
 
 require('base/common')
