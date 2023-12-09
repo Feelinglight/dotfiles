@@ -26,5 +26,7 @@ RUN rm -rf "/root/tools_tuning"
 ENV TERM xterm-256color
 
 WORKDIR "/root/.config/nvim/lua"
-CMD /bin/zsh
+
+ADD cmd.sh /usr/local/bin/cmd.sh
+CMD /usr/local/bin/cmd.sh
 
