@@ -3,6 +3,8 @@
 " Используем системный буфер обмена
 set clipboard^=unnamed,unnamedplus
 
+" Не перегружать клик правой мышью
+set mouse=
 
 " ------ [[ Search ]] ------
   
