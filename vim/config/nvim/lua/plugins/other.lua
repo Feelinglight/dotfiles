@@ -6,6 +6,9 @@ return {
   -- Делает возможным использования . с vim-surround
   { 'tpope/vim-repeat' },
 
+  -- Автоматическое закрытие скобок на enter
+  { 'rstacruz/vim-closer' },
+
   -- Shortcats для быстрого комментирования строк
   { 
     'numToStr/Comment.nvim',

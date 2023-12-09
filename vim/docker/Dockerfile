@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 RUN apt-get update
 
-RUN apt-get install -y git language-pack-en curl libfuse2 host xz-utils fontconfig
+RUN apt-get install -y git language-pack-en curl libfuse2 host xz-utils fontconfig make
 RUN update-locale
 
 RUN git clone https://github.com/Feelinglight/tools_tuning "/root/tools_tuning"
