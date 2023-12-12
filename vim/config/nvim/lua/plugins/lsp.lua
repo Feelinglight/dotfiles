@@ -6,6 +6,9 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     opts = {
+      diagnostics = {
+        severity_sort = true,
+      },
       servers = {
         lua_ls = {
           settings = {
@@ -17,39 +20,23 @@ return {
                 callSnippet = "Replace",
               }
             }
-          }
+          },
+          -- Сейчас не обрабатывается
+          keys = {}
         }
       }
     },
     config = function(_, opts)
+
+      -- diagnostics
+      for name, icon in pairs(require("config").defaults.icons.diagnostics) do
+        name = "DiagnosticSign" .. name
+        vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
+      end
+
       local servers = opts.servers
       -- lspconfig = require('lspconfig').setup()
       -- lspconfig.pyright.setup()
     end,
   },
-
-  { 
-    "williamboman/mason.nvim",
-    lazy=false,
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shfmt",
-      }
-    },
-    config = function(_, opts)
-      require('mason').setup(opts)
-    end,
-  },
-
-  { 
-    "williamboman/mason-lspconfig.nvim",
-    lazy=false,
-    config = function()
-      require('mason-lspconfig').setup({
-        automatic_installation = true,
-      })
-    end,
-  },
-
 }
