@@ -34,9 +34,26 @@ return {
         vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
       end
 
+      vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
+
       local servers = opts.servers
-      -- lspconfig = require('lspconfig').setup()
-      -- lspconfig.pyright.setup()
+
+      local function setup(server)
+        require("lspconfig")[server].setup(servers[server])
+      end
+
+      mlsp = require('mason-lspconfig')
+      all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
+
+      local ensure_installed = {} 
+
+      for server, server_opts in pairs(servers) do
+        if server_opts then
+          ensure_installed[#ensure_installed + 1] = server
+        end
+      end
+      mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
+
     end,
   },
 }
