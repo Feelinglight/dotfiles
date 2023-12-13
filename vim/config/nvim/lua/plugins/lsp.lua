@@ -18,16 +18,20 @@ return {
               },
               completion = {
                 callSnippet = "Replace",
-              }
-            }
+              },
+              diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { "vim" },
+              },
+            },
           },
           -- Сейчас не обрабатывается
-          keys = {}
-        }
+          keys = {},
+        },
+        pyright = {},
       }
     },
     config = function(_, opts)
-
       -- diagnostics
       for name, icon in pairs(require("config").defaults.icons.diagnostics) do
         name = "DiagnosticSign" .. name
@@ -42,10 +46,9 @@ return {
         require("lspconfig")[server].setup(servers[server])
       end
 
-      mlsp = require('mason-lspconfig')
-      all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
+      local mlsp = require('mason-lspconfig')
 
-      local ensure_installed = {} 
+      local ensure_installed = {}
 
       for server, server_opts in pairs(servers) do
         if server_opts then
