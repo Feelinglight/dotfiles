@@ -38,11 +38,18 @@ set number
 " Подсвечивать текущую строку
 set cursorline
 
+" Вертикальная линия-граница
+set colorcolumn=100
+
 " Отображать табы как >~~~
 set list
 set listchars=tab:>~
 
 " -------------------- Keybindings --------------------
+
+" Сделать <leader> клавишей пробел
+nnoremap <Space> <Nop>
+let mapleader=" "
 
 " Выход из режима вставки по Ctrl+k
 imap <C-k> <Esc>

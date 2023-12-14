@@ -9,6 +9,7 @@ return {
       diagnostics = {
         severity_sort = true,
       },
+
       servers = {
         lua_ls = {
           settings = {
@@ -28,6 +29,7 @@ return {
           -- Сейчас не обрабатывается
           keys = {},
         },
+
         pyright = {},
       }
     },

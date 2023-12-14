@@ -63,7 +63,7 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-          ["<CR>"] = cmp.mapping.confirm({ select = true }), 
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
           -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           ["<S-CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
@@ -80,28 +80,27 @@ return {
             { name = "path" },
           },
           {
-            { name = "buffer" }, 
+            { name = "buffer" },
           }
         ),
 
-        -- formatting = {
-        --   format = function(_, item)
-        --     local icons = require("lazyvim.config").icons.kinds
-        --     if icons[item.kind] then
-        --       item.kind = icons[item.kind] .. item.kind
-        --     end
-        --     return item
-        --   end,
-        -- },
-        -- experimental = {
-        --   ghost_text = {
-        --     hl_group = "CmpGhostText",
-        --   },
-        -- },
+        formatting = {
+          format = function(_, item)
+            local icons = require("config").defaults.icons.kinds
+            if icons[item.kind] then
+              item.kind = icons[item.kind] .. item.kind
+            end
+            return item
+          end,
+        },
+        experimental = {
+          ghost_text = {
+            hl_group = "CmpGhostText",
+          },
+        },
         sorting = defaults.sorting,
       }
     end,
-    ---@param opts cmp.ConfigSchema
     config = function(_, opts)
       for _, source in ipairs(opts.sources) do
         source.group_index = source.group_index or 1
