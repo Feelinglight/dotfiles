@@ -44,8 +44,16 @@ return {
 
       local servers = opts.servers
 
+      local on_attach = require("lsp.keymaps").on_attach
+      local capabilities = require("lsp.keymaps").capabilities
+
       local function setup(server)
-        require("lspconfig")[server].setup(servers[server])
+        local server_opts = vim.tbl_deep_extend("force", {
+          -- capabilities = vim.deepcopy(capabilities),
+          on_attach = on_attach,
+        }, servers[server] or {})
+
+        require("lspconfig")[server].setup(server_opts)
       end
 
       local mlsp = require('mason-lspconfig')
