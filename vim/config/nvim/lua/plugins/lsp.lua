@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -44,13 +45,13 @@ return {
 
       local servers = opts.servers
 
-      local on_attach = require("lsp.keymaps").on_attach
-      local capabilities = require("lsp.keymaps").capabilities
+      local on_attach = require("plugins.lsp.keymaps").on_attach
+      local capabilities = require("plugins.lsp.keymaps").capabilities
 
       local function setup(server)
         local server_opts = vim.tbl_deep_extend("force", {
-          -- capabilities = vim.deepcopy(capabilities),
           on_attach = on_attach,
+          capabilities = vim.deepcopy(capabilities),
         }, servers[server] or {})
 
         require("lspconfig")[server].setup(server_opts)
@@ -72,7 +73,7 @@ return {
 
   {
     "williamboman/mason.nvim",
-
+    lazy = false,
     config = function(_, opts)
       require("mason").setup(opts)
     end

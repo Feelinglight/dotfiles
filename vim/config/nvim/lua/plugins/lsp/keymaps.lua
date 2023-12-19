@@ -16,7 +16,7 @@ local function lsp_keymaps(bufnr)
       keymap("n", "gd", vim.lsp.buf.definition, buf_opts)
     end,
     buf_opts)
-  -- keymap("n", "gd", vim.lsp.buf.definition, buf_opts)
+  keymap("n", "gl", '<cmd>LspInfo<cr>', buf_opts)
   -- keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<cr>", buf_opts)
   -- keymap("n", "gc", "<cmd>Lspsaga show_cursor_diagnostics<cr>", buf_opts)
   -- keymap("n", "gp", "<cmd>Lspsaga peek_definition<cr>", buf_opts)
