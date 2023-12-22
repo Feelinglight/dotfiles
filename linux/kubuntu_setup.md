@@ -228,3 +228,14 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 - При запуске Dolphin открывается zsh вместо oh-my-zsh
 
   [С этим нужно жить](https://bugs.kde.org/show_bug.cgi?id=407990)((
+
+- Chrome показывает уведомление об обновлениях при запуске
+
+  В файле **nvim /usr/share/applications/google-chrome.desktop** исправить первую строку вида
+  ```ini
+  Exec=/usr/bin/google-chrome-stable
+  ```
+  на
+  ```ini
+  Exec=/usr/bin/google-chrome-stable --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' %U
+  ```
