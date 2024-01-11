@@ -1,0 +1,65 @@
+set easymotion
+set surround
+set keep-english-in-normal-and-restore-in-insert
+set showmode
+set ideajoin
+set showcmd
+set incsearch
+set argtextobj
+set exchange
+set sneak
+
+let mapleader = " "
+
+map <tab> :action CollapseSelection<cr>
+
+map <leader>tz :action HideAllWindows<cr>
+
+" Code/Refactoring
+map <leader>cr :action RefactoringMenu<cr>
+map <leader>cd :action GotoDeclaration<cr>
+map <leader>cD :action ShowUsages<cr>
+map <leader>ci :action GotoImplementation<cr>
+map <leader>cI :action GotoSuperMethod<cr>
+map <leader>ck :action QuickJavaDoc<cr>
+map <leader>ct :action ExpressionTypeInfo<cr>
+map <leader>cf :action ReformatCode<cr>
+map <leader>cy :action CopyReference<cr>
+map <leader>co :action OptimizeImports<cr>
+map <leader>m :action ShowIntentionActions<cr>
+
+
+" Errors navigation
+map ]e :action GotoNextError<cr>
+map [e :action GotoPreviousError<cr>
+
+map <leader>qi :source ~/.ideavimrc<cr>
+
+" Run/Compile actions
+map <leader>rt :action RerunTests<cr>
+map <leader>rr :action RunAnything<cr>
+map <leader>rs :action Android.SyncProject<cr>
+map <leader>rl :action Rerun<cr>
+map <leader>rc :action MakeModule<cr>
+map <leader>rd :action AndroidConnectDebuggerAction<cr>
+
+" Search in file
+map <leader>cj :action FileStructurePopup<CR>
+map <leader>ss :action Find<cr>
+
+" Global search
+map <leader>sp :action FindInPath<cr>
+map <leader>sc :action GotoClass<cr>
+map <leader>sf :action GotoFile<cr>
+map <leader>si :action GotoSymbol<cr>
+map <leader>sa :action GotoAction<cr>
+map <leader>se :action SearchEverywhere<cr>
+
+" AceJump mappings
+map gs :action AceAction<CR>
+map gd :action AceDeclarationAction<CR>
+map gl :action AceLineAction<CR>
+
+" Navigation
+map <leader>bb :action RecentFiles<cr>
+map <leader>bl :action RecentLocations<cr>
