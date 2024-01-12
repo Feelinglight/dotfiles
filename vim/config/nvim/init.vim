@@ -58,8 +58,8 @@ let mapleader=" "
 imap <C-k> <Esc>
 
 " Сохранение на Ctrl+S
-nmap <C-s> :w<CR>
-imap <C-s> <Esc>:w<CR>i
+" nmap <C-s> :w<CR>
+" imap <C-s> <Esc>:w<CR>i
 
 
 " -------------------- Load lua config --------------------
