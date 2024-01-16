@@ -7,11 +7,18 @@ return {
     lazy = false,
     opts = {
       modes = {
+        -- fFtT
         char = {
+          -- Отключить мультистроковый поиск
           multi_line = false,
-          highlight = { backdrop = true },
+          -- Показывать лэйблы на местах найденых символов
+          jump_labels = true,
+          highlight = {
+            -- Не убирать подсветку у строк ниже текущей при нажатии fFtT
+            backdrop = false
+          },
         }
-      }
+      },
     },
     keys = {
       -- { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
