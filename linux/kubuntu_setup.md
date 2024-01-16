@@ -208,6 +208,7 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 ## Ноутбук
 
 - Включить отображение процентов на виджете батареи
+- Если bluetooth-мышь, то ``sudo apt install solaar`` для отображения заряда мыши
 - Настроить отпечаток пальца
 - Настроить touche + touchegg:
   
