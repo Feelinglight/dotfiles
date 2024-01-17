@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 if [ "$EUID" == 0 ]; then
     real_user="$SUDO_USER"
