@@ -45,7 +45,7 @@ sudo apt remove -y ibus
 > В ppa для ubuntu максимальная версия **0.7**, что сильно меньше актуальной.
 
 ```sh
-# sudo apt install curl libfuse2 g++ npm
+sudo apt install curl libfuse2 g++ npm
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
@@ -144,15 +144,7 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 ## nvim
 
 ```bash
-# Установка выше
-# sudo add-apt-repository ppa:neovim-ppa/stable
-# sudo apt-get update
-# sudo apt-get install neovim
-
 git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
-# Тут будет ошибка "тема dracula не найдена", это нормально
-~/data/develop/tools_tuning/vim/restore.sh
-# Тут ошибки уже не будет
 ~/data/develop/tools_tuning/vim/restore.sh
 ```
 
