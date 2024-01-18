@@ -3,9 +3,6 @@
 " Используем системный буфер обмена
 set clipboard^=unnamed,unnamedplus
 
-" Отключить обработку ПКМ мыши
-set mouse=
-
 
 " ------ [[ Search ]] ------
   
