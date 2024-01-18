@@ -8,6 +8,7 @@ return {
     },
     opts = {
       diagnostics = {
+        underline = true,
         severity_sort = true,
       },
 
