@@ -17,9 +17,6 @@ set ignorecase
 " Если напишем "Ignore", то он будет искать только "Ignore"
 set smartcase
 
-" Подсвечивать найденные текстовые объекты
-set showmatch
-
 
 " ------ [[ Indent ]] ------
 
