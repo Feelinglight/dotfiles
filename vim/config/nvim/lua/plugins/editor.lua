@@ -9,7 +9,7 @@ return {
       defaults = {
         mode = { "n", "v" },
         ["g"] = { name = "+goto" },
-        ["gs"] = { name = "+surround" },
+        -- ["gs"] = { name = "+surround" },
         ["]"] = { name = "+next" },
         ["["] = { name = "+prev" },
         ["<leader><tab>"] = { name = "+tabs" },
@@ -62,6 +62,7 @@ return {
       -- { "K", mode = { "n" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+
   -- better diagnostics list and others
   {
     "folke/trouble.nvim",
@@ -103,5 +104,6 @@ return {
       },
     },
   },
+
 }
 
