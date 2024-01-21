@@ -39,18 +39,6 @@ return {
     main = "ibl",
   },
 
-  -- Подсветка слова под курсором
-  {
-    'echasnovski/mini.nvim',
-    lazy = false,
-    config = function()
-      require('mini.cursorword').setup()
-      -- Отключает подсветку текущего слова, подсвечивает все остальные
-      vim.api.nvim_set_hl(0, "MiniCursorwordCurrent", { guifg = nil, guibg = nil, gui = nil, cterm = nil })
-    end
-  },
-
-
   {
     'akinsho/bufferline.nvim',
     version = "*",
