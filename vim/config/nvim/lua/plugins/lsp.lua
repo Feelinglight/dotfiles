@@ -33,6 +33,7 @@ return {
         },
 
         pyright = {},
+        marksman = {},
       }
     },
     config = function(_, opts)
