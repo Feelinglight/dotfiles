@@ -46,3 +46,43 @@ autocmd('BufEnter', {
   command = 'set fo-=c fo-=r fo-=o'
 })
 
+-- Автоматическое переключение раскладки в нормальном режиме
+local function get_current_language()
+    local handle = io.popen('qdbus org.kde.keyboard /Layouts getLayout')
+    if handle ~= nil then
+      local result = handle:read("*a")
+      handle:close()
+
+      return tonumber(result)
+    end
+end
+
+local function set_current_language(language)
+    if language ~= nil then
+      os.execute(string.format(
+        'qdbus org.kde.keyboard /Layouts setLayout %d > /dev/null', language))
+    end
+end
+
+-- Зависит от настроек KDE
+local ENGLISH_LANGUAGE = 0
+
+local current_language = ENGLISH_LANGUAGE
+
+
+autocmd('InsertEnter', {
+  callback = function()
+    set_current_language(current_language)
+  end
+})
+
+autocmd('InsertLeave', {
+  callback = function()
+    local language = get_current_language()
+    if language ~= nil then
+      current_language = language
+      set_current_language(ENGLISH_LANGUAGE)
+    end
+  end
+})
+
