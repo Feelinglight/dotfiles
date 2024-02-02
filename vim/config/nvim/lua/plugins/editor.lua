@@ -55,7 +55,11 @@ return {
     end,
     opts = {
       sources = { "filesystem", "buffers", "git_status", "document_symbols" },
+      -- Не открывать файлы в окнах с этими типами
       open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
+
+      close_if_last_window = true,
+
       filesystem = {
         bind_to_cwd = false,
         follow_current_file = { enabled = true },

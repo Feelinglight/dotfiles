@@ -47,6 +47,18 @@ autocmd('BufEnter', {
 })
 
 -- Автоматическое переключение раскладки в нормальном режиме
+
+local function check_dbus()
+  local ret = os.execute('qdbus --version > /dev/null')
+  if ret == 0 then
+    return true
+  else
+    return false
+  end
+end
+
+local has_dbus = check_dbus()
+
 local function get_current_language()
     local handle = io.popen('qdbus org.kde.keyboard /Layouts getLayout')
     if handle ~= nil then
@@ -57,6 +69,11 @@ local function get_current_language()
     end
 end
 
+-- Число зависит от настроек KDE
+local ENGLISH_LANGUAGE = 0
+local current_language = ENGLISH_LANGUAGE
+
+
 local function set_current_language(language)
     if language ~= nil then
       os.execute(string.format(
@@ -64,24 +81,24 @@ local function set_current_language(language)
     end
 end
 
--- Зависит от настроек KDE
-local ENGLISH_LANGUAGE = 0
-
-local current_language = ENGLISH_LANGUAGE
 
 
 autocmd('InsertEnter', {
   callback = function()
-    set_current_language(current_language)
+    if has_dbus then
+      set_current_language(current_language)
+    end
   end
 })
 
 autocmd('InsertLeave', {
   callback = function()
-    local language = get_current_language()
-    if language ~= nil then
-      current_language = language
-      set_current_language(ENGLISH_LANGUAGE)
+    if has_dbus then
+      local language = get_current_language()
+      if language ~= nil then
+        current_language = language
+        set_current_language(ENGLISH_LANGUAGE)
+      end
     end
   end
 })
