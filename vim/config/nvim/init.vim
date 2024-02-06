@@ -42,7 +42,7 @@ set colorcolumn=100
 
 " Отображать табы как >~~~
 set list
-set listchars=tab:>~
+set listchars=tab:>~,trail:_
 
 " -------------------- Keybindings --------------------
 
@@ -57,7 +57,8 @@ imap <C-k> <Esc>
 " nmap <C-s> :w<CR>
 " imap <C-s> <Esc>:w<CR>i
 
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
 
 " -------------------- Load lua config --------------------
 lua require('init')
-
