@@ -27,5 +27,5 @@ ENV TERM xterm-256color
 WORKDIR "/root/.config/nvim/lua"
 
 ADD cmd.sh /usr/local/bin/cmd.sh
-CMD /usr/local/bin/cmd.sh
-
+# CMD /usr/local/bin/cmd.sh
+CMD /bin/zsh
