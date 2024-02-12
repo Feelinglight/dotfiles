@@ -62,3 +62,7 @@ match WhitespaceEOL /\s\+$/
 
 " -------------------- Load lua config --------------------
 lua require('init')
+
+" Перегрузку для тем нужно добавлять после инициализации lua
+highlight GitSignsChange guifg=#b89554
+

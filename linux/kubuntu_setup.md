@@ -45,7 +45,7 @@ sudo apt remove -y ibus
 > В ppa для ubuntu максимальная версия **0.7**, что сильно меньше актуальной.
 
 ```sh
-sudo apt install curl libfuse2 g++ npm
+sudo apt install curl libfuse2 g++ npm xclip
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
