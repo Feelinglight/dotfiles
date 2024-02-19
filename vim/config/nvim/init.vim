@@ -1,13 +1,14 @@
 " -------------------- Settings --------------------
- 
+
 " Используем системный буфер обмена
 set clipboard^=unnamed,unnamedplus
 " Spell-checking
 setlocal spell spelllang=ru_ru,en_us
+set spellcapcheck=
 
 
 " ------ [[ Search ]] ------
-  
+
 " Игнорировать регистр при поиске
 " Если теперь введем "IGNORE", то он найдет и "ignore"
 set ignorecase
