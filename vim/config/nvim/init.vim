@@ -45,6 +45,9 @@ set colorcolumn=100
 set list
 set listchars=tab:>~,trail:_
 
+" Прозрачность окон (от 0 до 100)
+set winblend=10
+
 " -------------------- Keybindings --------------------
 
 " Сделать <leader> клавишей пробел
