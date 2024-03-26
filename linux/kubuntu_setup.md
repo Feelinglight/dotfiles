@@ -169,6 +169,10 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 
   - Выбрать шрифт JetBrainsMonoNL Nerd Font / Regular / 10
 
+- Настройка -> Настроить Konsole... -> Панель вкладок / Разделение окна -> Разделение окна
+
+  - Установить "Показывать заголовок" в "Никогда"
+
 ## Dolphin
 
 - В правой панели ПКМ -> Скрыть
