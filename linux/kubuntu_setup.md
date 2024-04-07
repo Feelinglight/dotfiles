@@ -146,6 +146,7 @@ git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuni
 ```bash
 git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
 ~/data/develop/tools_tuning/vim/restore.sh
+sudo ~/data/develop/tools_tuning/vim/restore.sh
 ```
 
 
