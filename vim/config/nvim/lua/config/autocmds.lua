@@ -57,21 +57,10 @@ local function check_dbus()
   end
 end
 
+
 local has_dbus = check_dbus()
-
-local function get_current_language()
-    local handle = io.popen('qdbus org.kde.keyboard /Layouts getLayout')
-    if handle ~= nil then
-      local result = handle:read("*a")
-      handle:close()
-
-      return tonumber(result)
-    end
-end
-
 -- Число зависит от настроек KDE
 local ENGLISH_LANGUAGE = 0
-local current_language = ENGLISH_LANGUAGE
 
 
 local function set_current_language(language)
@@ -82,23 +71,10 @@ local function set_current_language(language)
 end
 
 
-
-autocmd('InsertEnter', {
-  callback = function()
-    if has_dbus then
-      set_current_language(current_language)
-    end
-  end
-})
-
 autocmd('InsertLeave', {
   callback = function()
     if has_dbus then
-      local language = get_current_language()
-      if language ~= nil then
-        current_language = language
-        set_current_language(ENGLISH_LANGUAGE)
-      end
+      set_current_language(ENGLISH_LANGUAGE)
     end
   end
 })

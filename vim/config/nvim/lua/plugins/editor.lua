@@ -137,9 +137,9 @@ return {
         "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
         desc = "Switch Buffer",
       },
-    --   { "<leader>/", Util.telescope("live_grep"), desc = "Grep (root dir)" },
+      { "<leader>/",  "<cmd>Telescope live_grep<cr>", desc = "Grep (cwd)" },
       { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-    --   { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
+      { "<leader><space>",  "<cmd>Telescope find_files<cr>", desc = "Find Files (cwd)" },
     --   -- find
       { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
     --   { "<leader>fc", Util.telescope.config_files(), desc = "Find Config File" },
@@ -159,8 +159,6 @@ return {
       { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
       { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
       { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
-      -- { "<leader>sg", Util.telescope("live_grep"), desc = "Grep (root dir)" },
-    --   { "<leader>sG", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
       { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
@@ -231,6 +229,14 @@ return {
             end
             return 0
           end,
+          layout_config = {
+            horizontal = {
+              height = 0.9,
+              preview_cutoff = 80,
+              prompt_position = "bottom",
+              width = 0.9
+            },
+          },
           mappings = {
             i = {
               ["<c-t>"] = open_with_trouble,
