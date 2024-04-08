@@ -49,7 +49,7 @@ autocmd('BufEnter', {
 -- Автоматическое переключение раскладки в нормальном режиме
 
 local function check_dbus()
-  local ret = os.execute('qdbus --version > /dev/null')
+  local ret = os.execute('qdbus --version 2>&1 > /dev/null')                                        
   if ret == 0 then
     return true
   else
