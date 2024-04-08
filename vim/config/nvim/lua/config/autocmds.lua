@@ -64,10 +64,9 @@ local ENGLISH_LANGUAGE = 0
 
 
 local function set_current_language(language)
-    if language ~= nil then
-      os.execute(string.format(
-        'qdbus org.kde.keyboard /Layouts setLayout %d > /dev/null', language))
-    end
+  os.execute(string.format(
+    'qdbus org.kde.keyboard /Layouts setLayout %d > /dev/null', language)
+  )
 end
 
 
