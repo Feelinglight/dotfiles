@@ -9,7 +9,7 @@ sudo apt full-upgrade
 sudo apt install -y kubuntu-desktop openssh-server \
   curl zsh virt-manager virt-viewer bat htop git \
   git-gui python3-venv python3-pip fontconfig \
-  npm fzf zoxide ripgrep
+  npm fzf zoxide
 sudo apt remove -y ibus 
 ```
 
@@ -45,7 +45,7 @@ sudo apt remove -y ibus
 > В ppa для ubuntu максимальная версия **0.7**, что сильно меньше актуальной.
 
 ```sh
-sudo apt install curl libfuse2 g++ npm xclip
+sudo apt install curl libfuse2 g++ npm xclip ripgrep
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
