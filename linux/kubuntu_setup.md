@@ -8,7 +8,7 @@ sudo apt full-upgrade
 # npm нужен для lsp сервера pyright для neovim
 sudo apt install -y kubuntu-desktop openssh-server \
   curl zsh virt-manager virt-viewer bat htop git \
-  git-gui python3-venv python3-pip fontconfig \ 
+  git-gui python3-venv python3-pip fontconfig \
   npm fzf zoxide ripgrep
 sudo apt remove -y ibus 
 ```
