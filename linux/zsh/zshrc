@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=$PATH:$HOME/.local/bin
-alias cat="batcat -P -p"
+alias cat="batcat --paging never -p"
 
 function cs () {
     cd $1
