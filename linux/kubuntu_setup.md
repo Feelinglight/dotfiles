@@ -174,6 +174,11 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 
   - Установить "Показывать заголовок" в "Никогда"
 
+- Настройка -> Комбинации клавиш... -> Копировать
+
+  - Добавить комбинацию "Ctrl + Ins"
+
+
 ## Dolphin
 
 - В правой панели ПКМ -> Скрыть
