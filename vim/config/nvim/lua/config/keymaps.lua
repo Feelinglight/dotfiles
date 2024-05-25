@@ -12,10 +12,12 @@ map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
--- tabs
--- map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
--- map("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
--- map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
-map("n", "]t", "<cmd>tabnext<cr>", { desc = "Next Tab" })
-map("n", "[t", "<cmd>tabclose<cr>", { desc = "Close Tab" })
-map("n", "<C-Tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+-- -- buffers
+map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+map("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<leader>bd", "<cmd>:bp<bar>sp<bar>bn<bar>bd<cr>", { desc = "Delete Buffer" })
+-- map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+
