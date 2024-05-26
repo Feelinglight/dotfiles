@@ -1,4 +1,5 @@
 " Больше примеров: https://github.com/JetBrains/ideavim/discussions/303
+" Все экшены: https://github.com/JetBrains/intellij-community/blob/idea/241.15989.150/platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java
 
 set easymotion
 set surround
