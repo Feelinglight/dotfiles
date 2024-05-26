@@ -7,11 +7,11 @@ return {
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        config = function()
+        config = function(_, opts)
           -- When in diff mode, we want to use the default
           -- vim text objects c & C instead of the treesitter ones.
           local move = require("nvim-treesitter.textobjects.move") ---@type table<string,fun(...)>
-          local configs = require("nvim-treesitter.configs")
+          local configs = require("nvim-treesitter.configs").setup(opts)
           for name, fn in pairs(move) do
             if name:find("goto") == 1 then
               move[name] = function(q, ...)
@@ -29,6 +29,31 @@ return {
             end
           end
         end,
+        opts = {
+          textobjects = {
+            swap = {
+              enable = true,
+              swap_next = {
+                ["<leader>a"] = "@parameter.inner",
+              },
+              swap_previous = {
+                ["<leader>A"] = "@parameter.inner",
+              },
+            },
+            select = {
+              enable = true,
+              lookahead = true,
+              keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                -- You can optionally set descriptions to the mappings (used in the desc parameter of
+                -- nvim_buf_set_keymap) which plugins like which-key display
+                ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+              }
+            }
+          }
+        }
       },
     },
 
@@ -44,8 +69,15 @@ return {
       ensure_installed = {
         "bash",
         "c",
+        "cmake",
+        "css",
+        "csv",
+        "comment",
         "diff",
+        "dockerfile",
+        "gitignore",
         "html",
+        "ini",
         "javascript",
         "jsdoc",
         "json",
@@ -53,16 +85,19 @@ return {
         "lua",
         "luadoc",
         "luap",
+        "make",
         "markdown",
         "markdown_inline",
         "python",
         "query",
         "regex",
+        "sql",
         "toml",
         "tsx",
         "typescript",
         "vim",
         "vimdoc",
+        "xml",
         "yaml",
       },
       incremental_selection = {
