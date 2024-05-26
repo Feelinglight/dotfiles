@@ -46,8 +46,19 @@ autocmd('BufEnter', {
   command = 'set fo-=c fo-=r fo-=o'
 })
 
--- Автоматическое переключение раскладки в нормальном режиме
+-- Открыть Neo-tree при запуске neovim
+autocmd("VimEnter", {
+  group = augroup("neotree", { clear = true }),
+  desc = "Open Neotree on startup",
+  callback = function()
+    -- Без задержки валятся ошибки при открытии файлов
+    vim.defer_fn(function()
+      vim.cmd("Neotree show")
+    end, 100)
+  end,
+})
 
+-- Автоматическое переключение раскладки в нормальном режиме
 local function check_dbus()
   local ret = os.execute('qdbus --version > /dev/null 2>&1')
   if ret == 0 then
