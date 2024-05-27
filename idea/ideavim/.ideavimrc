@@ -1,0 +1,19 @@
+set surround
+set incsearch
+set hls " Отключать только вручную через ввод noh
+" set clipboard+=unnamedplus
+set clipboard^=unnamedplus
+
+nmap g] :action GotoImplementation<CR>
+
+map ]e :action GotoNextError<cr>
+map [e :action GotoPreviousError<cr>
+
+map ]f :action MethodDown<cr>
+map [f :action MethodUp<cr>
+
+map H :action NextEditorTab<cr>
+map L :action PreviousEditorTab<cr>
+
+Plug 'machakann/vim-highlightedyank'
+
