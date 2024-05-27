@@ -21,3 +21,6 @@ map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>bd", "<cmd>:bp<bar>sp<bar>bn<bar>bd<cr>", { desc = "Delete Buffer" })
 -- map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
+-- После этих команд ломается перемещение по буферам (неправильно сортируются)
+-- map("n", "]t", "<cmd>BufferLineMoveNext<cr>", { desc = "Reorder tab next"})
+-- map("n", "[t", "<cmd>BufferLineMovePrev<cr>", { desc = "Reorder tab back"})
