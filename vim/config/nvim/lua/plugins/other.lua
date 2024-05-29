@@ -25,40 +25,5 @@ return {
       })
     end
   },
-
-    -- indent guides for Neovim
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      indent = {
-        char = "│",
-        tab_char = "│",
-      },
-      scope = { enabled = false },
-    },
-    main = "ibl",
-  },
-
-  {
-    'akinsho/bufferline.nvim',
-    version = "*",
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    lazy = false,
-    config = function()
-      vim.opt.termguicolors = true
-      require('bufferline').setup()
-    end,
-    keys = {
-      { "]t", "<cmd>BufferLineMoveNext<cr>", desc = "Reorder tab next" },
-      { "[t", "<cmd>BufferLineMovePrev<cr>", desc = "Reorder tab back" },
-      { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Go to next tab" },
-      { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Go to prev tab" },
-      { "<leader>bp", "<cmd>BufferLinePick<cr>", desc = "Pick tab" },
-      { "<leader>bc", "<cmd>BufferLineCloseOthers<cr>", desc = "Close others tabs" },
-      { "<leader>bb", "<cmd>e #<cr>", desc = "Switch to prev Buffer" },
-      { "<leader>bd", "<cmd>:bp<bar>sp<bar>bn<bar>bd<cr>", desc = "Delete Buffer" },
-      { "<leader>bD", "<cmd>:bd<cr>", desc = "Delete Buffer and Window" },
-    }
-  }
 }
 
