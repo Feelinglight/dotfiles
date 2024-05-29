@@ -74,13 +74,32 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require("lualine").setup({
-        options = {
-          theme = 'dracula'
-        },
-      })
-    end
+    config = function(_, opts)
+      require("lualine").setup(opts)
+    end,
+    opts = {
+      options = {
+        theme = 'dracula',
+        globalstatus = true,
+        disabled_filetypes = { statusline = { "dashboard" } },
+      },
+      -- sections = {
+        -- lualine_b = { "branch" },
+        -- lualine_a = { "mode" },
+        -- lualine_c = {
+          -- vim.fn.getcwd(),
+          -- {
+            -- "diagnostics",
+            -- symbols = {
+              -- error = icons.diagnostics.Error,
+              -- warn = icons.diagnostics.Warn,
+              -- info = icons.diagnostics.Info,
+              -- hint = icons.diagnostics.Hint,
+            -- },
+          -- },
+        -- }
+      -- }
+    }
   },
 
   {
@@ -113,7 +132,7 @@ return {
             { action = "ene | startinsert",                                        desc = " New File",        icon = " ", key = "n" },
             { action = "Telescope oldfiles",                                       desc = " Recent Files",    icon = " ", key = "r" },
             { action = "Telescope live_grep",                                      desc = " Find Text",       icon = " ", key = "g" },
-            { action = "e ~/.config/nvim",                                         desc = " Config",          icon = " ", key = "c" },
+            { action = "cd ~/.config/nvim | e ~/.config/nvim",                     desc = " Config",          icon = " ", key = "c" },
             { action = 'lua require("persistence").load()',                        desc = " Restore Session", icon = " ", key = "s" },
             { action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
             { action = "qa",                                                       desc = " Quit",            icon = " ", key = "q" },
