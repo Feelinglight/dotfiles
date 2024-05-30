@@ -1,3 +1,5 @@
+local icons = require("config").defaults.icons
+
 return {
 
   -- {
@@ -83,22 +85,33 @@ return {
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard" } },
       },
-      -- sections = {
-        -- lualine_b = { "branch" },
-        -- lualine_a = { "mode" },
-        -- lualine_c = {
-          -- vim.fn.getcwd(),
-          -- {
-            -- "diagnostics",
-            -- symbols = {
-              -- error = icons.diagnostics.Error,
-              -- warn = icons.diagnostics.Warn,
-              -- info = icons.diagnostics.Info,
-              -- hint = icons.diagnostics.Hint,
-            -- },
-          -- },
-        -- }
-      -- }
+      sections = {
+        lualine_x = {
+          'encoding',
+          'fileformat',
+          {
+            "diff",
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = gitsigns.added,
+                  modified = gitsigns.changed,
+                  removed = gitsigns.removed,
+                }
+              end
+            end,
+          },
+        },
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+      },
+      extensions = { "neo-tree", "lazy" },
     }
   },
 
