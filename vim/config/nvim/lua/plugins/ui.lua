@@ -1,5 +1,15 @@
 local icons = require("config").defaults.icons
 
+
+local lint_progress = function()
+  local linters = require("lint").get_running()
+  if #linters == 0 then
+      return "󰦕"
+  end
+  return "󱉶 " .. table.concat(linters, ", ")
+end
+
+
 return {
 
   -- {
@@ -87,8 +97,7 @@ return {
       },
       sections = {
         lualine_x = {
-          'encoding',
-          'fileformat',
+          { lint_progress },
           {
             "diff",
             symbols = {
@@ -107,6 +116,9 @@ return {
               end
             end,
           },
+          'encoding',
+          'fileformat',
+          'filetype',
         },
         lualine_y = {'progress'},
         lualine_z = {'location'}
