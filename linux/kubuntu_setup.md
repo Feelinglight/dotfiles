@@ -51,16 +51,6 @@ chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 ```
 
-```sh
-# Линтеры для nvim-lint
-
-# FIXME: От рута эти линтеры рыботать не будут
-python3 -m pip install cmakelint yamllint systemdlint
-
-sudo apt install shellcheck
-```
-
-
 ### Nerd fonts
 
 ```sh
