@@ -32,6 +32,7 @@ return {
           keys = {},
         },
 
+        bashls = {},
         pyright = {},
         marksman = {},
       }
@@ -69,15 +70,43 @@ return {
         end
       end
       mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
-
     end,
   },
 
   {
     "williamboman/mason.nvim",
     lazy = false,
+    opts = {
+      ensure_installed = {
+        "stylua",
+        "shfmt",
+        "cspell",
+        "yamllint",
+        "cmakelint",
+        "shellcheck",
+      },
+    },
     config = function(_, opts)
       require("mason").setup(opts)
-    end
+      local mr = require("mason-registry")
+      mr:on("package:install:success", function()
+        vim.defer_fn(function()
+          -- trigger FileType event to possibly load this newly installed LSP server
+          require("lazy.core.handler.event").trigger({
+            event = "FileType",
+            buf = vim.api.nvim_get_current_buf(),
+          })
+        end, 100)
+      end)
+
+      mr.refresh(function()
+        for _, tool in ipairs(opts.ensure_installed) do
+          local p = mr.get_package(tool)
+          if not p:is_installed() then
+            p:install()
+          end
+        end
+      end)
+    end,
   },
 }

@@ -6,6 +6,8 @@ return {
       -- Event to trigger linters
       events = { "BufWritePost", "BufReadPost", "InsertLeave" },
       linters_by_ft = {
+        -- Все линтеры должны быть установлены через mason в lsp.lua, либо вручную, если в 
+        -- Mason их установка не поддерживается!!!
         python = { "mypy", "ruff" },
         cpp = { "clangtidy" },
         yaml = { "yamllint" },
