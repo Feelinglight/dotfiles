@@ -51,6 +51,19 @@ chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 ```
 
+```sh
+# Линтеры для nvim-lint
+
+# FIXME: От рута эти линтеры рыботать не будут
+python3 -m pip install cmakelint yamllint systemdlint
+
+sudo apt install shellcheck
+
+curl -o hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-arm64
+chmod +x hadolint
+sudo mv hadolint /usr/local/bin
+```
+
 
 ### Nerd fonts
 
@@ -65,7 +78,6 @@ fc-cache ~/.local/share/fonts
 
 rm -rf ./JetBrainsMono.tar.xz ./JetBrainsMono
 ```
-
 
 ## Папки
 
