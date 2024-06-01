@@ -20,8 +20,8 @@ local function lsp_keymaps(bufnr)
   -- keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<cr>", buf_opts)
   -- keymap("n", "gc", "<cmd>Lspsaga show_cursor_diagnostics<cr>", buf_opts)
   -- keymap("n", "gp", "<cmd>Lspsaga peek_definition<cr>", buf_opts)
-  -- keymap("n", "K", vim.lsp.buf.hover, buf_opts)
-  -- keymap("n", "K", "<cmd>Lspsaga hover_doc<cr>", buf_opts)
+  keymap("n", "K", vim.lsp.buf.hover, buf_opts)
+  keymap("n", "gK", "<cmd>Lspsaga hover_doc<cr>", buf_opts)
   -- keymap("n", "gi", "<cmd>Telescope lsp_implementations<cr>", buf_opts)
 end
 

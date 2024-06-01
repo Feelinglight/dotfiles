@@ -77,6 +77,7 @@ return {
     "williamboman/mason.nvim",
     lazy = false,
     opts = {
+      PATH = "append",
       ensure_installed = {
         "stylua",
         "shfmt",
