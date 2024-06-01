@@ -3,7 +3,9 @@
 " Используем системный буфер обмена
 set clipboard^=unnamed,unnamedplus
 " Spell-checking
-setlocal spell spelllang=ru_ru,en_us
+set spell
+set spelllang=ru_ru,en_us
+set spelloptions=camel
 set spellcapcheck=
 
 

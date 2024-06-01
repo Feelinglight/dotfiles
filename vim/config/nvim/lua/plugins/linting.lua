@@ -14,9 +14,7 @@ return {
         cmake = { "cmakelint" },
         sh = { "shellcheck" },
         -- Use the "*" filetype to run linters on all filetypes.
-        -- https://github.com/streetsidesoftware/cspell/
         ['*'] = {
-          'cspell',
         },
       },
       -- LazyVim extension to easily override linter options

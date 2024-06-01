@@ -80,7 +80,6 @@ return {
       ensure_installed = {
         "stylua",
         "shfmt",
-        "cspell",
         "yamllint",
         "cmakelint",
         "shellcheck",
