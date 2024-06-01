@@ -6,7 +6,7 @@ return {
       -- Event to trigger linters
       events = { "BufWritePost", "BufReadPost", "InsertLeave" },
       linters_by_ft = {
-        -- Все линтеры должны быть установлены через mason в lsp.lua, либо вручную, если в 
+        -- Все линтеры должны быть установлены через mason в lsp.lua, либо вручную, если в
         -- Mason их установка не поддерживается!!!
         python = { "mypy", "ruff" },
         cpp = { "clangtidy" },
@@ -16,7 +16,7 @@ return {
         -- Use the "*" filetype to run linters on all filetypes.
         -- https://github.com/streetsidesoftware/cspell/
         ['*'] = {
-          -- 'cspell',
+          'cspell',
         },
       },
       -- LazyVim extension to easily override linter options
