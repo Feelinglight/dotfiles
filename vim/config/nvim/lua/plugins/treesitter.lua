@@ -91,6 +91,7 @@ return {
         "python",
         "query",
         "regex",
+        "rst",
         "sql",
         "toml",
         "tsx",
