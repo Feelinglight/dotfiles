@@ -84,6 +84,8 @@ return {
         "yamllint",
         "cmakelint",
         "shellcheck",
+        "mypy",
+        "ruff",
       },
     },
     config = function(_, opts)

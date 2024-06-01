@@ -10,7 +10,7 @@ sudo apt install -y kubuntu-desktop openssh-server \
   curl zsh virt-manager virt-viewer bat htop git \
   git-gui python3-venv python3-pip fontconfig \
   npm fzf zoxide
-sudo apt remove -y ibus 
+sudo apt remove -y ibus
 ```
 
 > ibus удаляется для отключения бесполезной иконки EN справа на панели задач
@@ -24,7 +24,7 @@ sudo apt remove -y ibus
 - Скачать deb пакет хром с офф. сайта
   - установить
   - войти в аккаунт google
- 
+
 
 ### VS Code
 
@@ -38,6 +38,15 @@ sudo apt remove -y ibus
   sudo tar xzf pycharm-*.tar.gz -C /opt/
   sudo ln -s /opt/pycharm-*/bin/pycharm.sh /usr/local/bin/pycharm-community
   ```
+
+### npm
+
+Некоторые плагины neovim (lsp bashls, cspell) хотят новую версию npm.
+
+```sh
+sudo npm install -g n
+sudo n lts
+```
 
 
 ### NeoVim
