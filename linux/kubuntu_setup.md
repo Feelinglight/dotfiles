@@ -58,10 +58,6 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 python3 -m pip install cmakelint yamllint systemdlint
 
 sudo apt install shellcheck
-
-curl -o hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-arm64
-chmod +x hadolint
-sudo mv hadolint /usr/local/bin
 ```
 
 
