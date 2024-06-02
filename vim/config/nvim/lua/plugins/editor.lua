@@ -135,28 +135,40 @@ return {
       {
         "<leader>,",
         "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
-        desc = "Switch Buffer",
+        desc = "Find Buffer",
       },
-      { "<leader>/",  "<cmd>Telescope live_grep<cr>", desc = "Grep (cwd)" },
       { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
       { "<leader><space>",  "<cmd>Telescope find_files<cr>", desc = "Find Files (cwd)" },
-    --   -- find
-      { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
-    --   { "<leader>fc", Util.telescope.config_files(), desc = "Find Config File" },
-    --   { "<leader>ff", Util.telescope("files"), desc = "Find Files (root dir)" },
-    --   { "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+      { "<leader>/",
+        function ()
+        require("telescope.builtin").live_grep({
+          additional_args = { "--hidden" }
+        })
+        end,
+        desc="Live grep"
+      },
+      { "<leader>sw",
+        function ()
+        require("telescope.builtin").live_grep({
+          additional_args = { "--hidden", "-w" }
+        })
+        end,
+        desc="Live grep exact"
+      },
+
+      -- find
       { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Files (git-files)" },
       { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-    --   { "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
-    --   -- git
+
+      -- git
       { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
       { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
-    --   -- search
+
+      -- search
       { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
       { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "Auto Commands" },
       { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
-      { "<leader>sc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
+      { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands" },
       { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
       { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
@@ -165,50 +177,11 @@ return {
       { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
       { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
       { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
-      { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
-    --   { "<leader>sw", Util.telescope("grep_string", { word_match = "-w" }), desc = "Word (root dir)" },
-    --   { "<leader>sW", Util.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "Word (cwd)" },
-    --   { "<leader>sw", Util.telescope("grep_string"), mode = "v", desc = "Selection (root dir)" },
-    --   { "<leader>sW", Util.telescope("grep_string", { cwd = false }), mode = "v", desc = "Selection (cwd)" },
-    --   { "<leader>uC", Util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
-      {
-        "<leader>ss",
-        function()
-          require("telescope.builtin").lsp_document_symbols({
-            symbols = require("lazyvim.config").get_kind_filter(),
-          })
-        end,
-        desc = "Goto Symbol",
-      },
-      {
-        "<leader>sS",
-        function()
-          require("telescope.builtin").lsp_dynamic_workspace_symbols({
-            symbols = require("lazyvim.config").get_kind_filter(),
-          })
-        end,
-        desc = "Goto Symbol (Workspace)",
-      },
+      { "<leader>sr", "<cmd>Telescope resume<cr>", desc = "Resume" },
+      { "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Resume" },
     },
     opts = function()
       local actions = require("telescope.actions")
-
-      local open_with_trouble = function(...)
-        return require("trouble.providers.telescope").open_with_trouble(...)
-      end
-      local open_selected_with_trouble = function(...)
-        return require("trouble.providers.telescope").open_selected_with_trouble(...)
-      end
-      -- local find_files_no_ignore = function()
-      --   local action_state = require("telescope.actions.state")
-      --   local line = action_state.get_current_line()
-      --   Util.telescope("find_files", { no_ignore = true, default_text = line })()
-      -- end
-      -- local find_files_with_hidden = function()
-      --   local action_state = require("telescope.actions.state")
-      --   local line = action_state.get_current_line()
-      --   Util.telescope("find_files", { hidden = true, default_text = line })()
-      -- end
 
       require("telescope").load_extension("fzf")
 
@@ -239,14 +212,10 @@ return {
           },
           mappings = {
             i = {
-              ["<c-t>"] = open_with_trouble,
-              ["<a-t>"] = open_selected_with_trouble,
               -- ["<a-i>"] = find_files_no_ignore,
               -- ["<a-h>"] = find_files_with_hidden,
-              ["<C-Down>"] = actions.cycle_history_next,
-              ["<C-Up>"] = actions.cycle_history_prev,
-              ["<C-f>"] = actions.preview_scrolling_down,
-              ["<C-b>"] = actions.preview_scrolling_up,
+              ["<C-j>"] = actions.move_selection_next,
+              ["<C-k>"] = actions.move_selection_previous,
             },
             n = {
               ["q"] = actions.close,
@@ -267,7 +236,6 @@ return {
       defaults = {
         mode = { "n", "v" },
         ["g"] = { name = "+goto" },
-        -- ["gs"] = { name = "+surround" },
         ["]"] = { name = "+next" },
         ["["] = { name = "+prev" },
         ["<leader><tab>"] = { name = "+tabs" },
@@ -297,6 +265,9 @@ return {
     lazy = false,
     opts = {
       modes = {
+        search = {
+          enabled = true,
+        },
         -- fFtT
         char = {
           -- Отключено, потому что плохо работает с операциями типа d
@@ -306,13 +277,7 @@ return {
     },
     keys = {
       -- { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      -- { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, 
-      --   desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      -- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, 
-      --   desc = "Treesitter Search" },
-      -- { "K", mode = { "n" }, function() require("flash").toggle() end,
-      --   desc = "Toggle Flash Search" },
+      -- { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
     },
   },
 
@@ -339,9 +304,11 @@ return {
           vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
         end
 
-        -- stylua: ignore start
+        -- Nav
         map("n", "]g", gs.next_hunk, "Next Hunk")
         map("n", "[g", gs.prev_hunk, "Prev Hunk")
+
+        -- Actions
         map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
         map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
         map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
@@ -351,23 +318,12 @@ return {
         map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
         map("n", "<leader>ghd", gs.diffthis, "Diff This")
         map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
+
+        -- Textobjects
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
       end,
     },
   },
-
-  -- -- Подсветка слова под курсором
-  -- {
-  --   'echasnovski/mini.nvim',
-  --   lazy = false,
-  --   config = function()
-  --     require('mini.cursorword').setup()
-  --     -- Отключает подсветку текущего слова, подсвечивает все остальные
-  --     vim.api.nvim_set_hl(0, "MiniCursorwordCurrent", {
-  --       guifg = nil, guibg = nil, gui = nil, cterm = nil
-  --     })
-  --   end
-  -- },
 
   -- Automatically highlights other instances of the word under your cursor.
   -- This works with LSP, Treesitter, and regexp matching to find the other
@@ -416,10 +372,14 @@ return {
     cmd = { "TroubleToggle", "Trouble" },
     opts = { use_diagnostic_signs = true },
     keys = {
-      { "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>",
-        desc = "Document Diagnostics (Trouble)" },
-      { "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>",
-        desc = "Workspace Diagnostics (Trouble)" },
+      {
+        "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>",
+        desc = "Document Diagnostics (Trouble)"
+      },
+      {
+        "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+        desc = "Workspace Diagnostics (Trouble)"
+      },
       { "<leader>xL", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
       { "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
       {
@@ -450,6 +410,22 @@ return {
         end,
         desc = "Next trouble/quickfix item",
       },
+    },
+  },
+
+  -- Finds and lists all of the TODO, HACK, BUG, etc comment
+  -- in your project and loads them into a browsable list.
+  {
+    "folke/todo-comments.nvim",
+    lazy = false,
+    cmd = { "TodoTrouble", "TodoTelescope" },
+    config = true,
+    -- stylua: ignore
+    keys = {
+      { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
+      { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
+      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
     },
   },
 
