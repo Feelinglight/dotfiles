@@ -9,13 +9,7 @@ local function lsp_keymaps(bufnr)
   local buf_opts = { buffer = bufnr, silent = true }
   -- keymap("n", "gD", vim.lsp.buf.declaration, buf_opts)
   -- keymap("n", "gD", "<cmd>Lspsaga finder<cr>", buf_opts)
-  keymap("n", "gd",
-    -- "<cmd>LspInfo<cr>",
-    function()
-      -- require("telescope.builtin").lsp_definitions({ reuse_win = true })
-      keymap("n", "gd", vim.lsp.buf.definition, buf_opts)
-    end,
-    buf_opts)
+  keymap("n", "gd", vim.lsp.buf.definition, buf_opts)
   keymap("n", "gl", '<cmd>LspInfo<cr>', buf_opts)
   -- keymap("n", "gl", "<cmd>Lspsaga show_line_diagnostics<cr>", buf_opts)
   -- keymap("n", "gc", "<cmd>Lspsaga show_cursor_diagnostics<cr>", buf_opts)

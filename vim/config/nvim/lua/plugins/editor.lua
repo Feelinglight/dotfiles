@@ -177,7 +177,7 @@ return {
       { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
       { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
       { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
-      { "<leader>sr", "<cmd>Telescope resume<cr>", desc = "Resume" },
+      { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
       { "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Resume" },
     },
     opts = function()
