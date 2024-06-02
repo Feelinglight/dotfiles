@@ -1,3 +1,5 @@
+
+
 return {
 
   -- file explorer
@@ -141,17 +143,17 @@ return {
       { "<leader><space>",  "<cmd>Telescope find_files<cr>", desc = "Find Files (cwd)" },
       { "<leader>/",
         function ()
-        require("telescope.builtin").live_grep({
-          additional_args = { "--hidden" }
-        })
+          require("telescope.builtin").live_grep({
+            additional_args = { "--hidden" }
+          })
         end,
         desc="Live grep"
       },
       { "<leader>sw",
         function ()
-        require("telescope.builtin").live_grep({
-          additional_args = { "--hidden", "-w" }
-        })
+          require("telescope.builtin").live_grep({
+            additional_args = { "--hidden", "-w" }
+          })
         end,
         desc="Live grep exact"
       },
