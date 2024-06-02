@@ -1,5 +1,3 @@
-
-
 return {
 
   -- file explorer
@@ -14,21 +12,12 @@ return {
     },
     keys = {
       {
-        "<leader>fe",
-        function()
-          require("neo-tree.command").execute({ toggle = true, dir = Util.root() })
-        end,
-        desc = "Explorer NeoTree (root dir)",
-      },
-      {
-        "<leader>fE",
+        "<leader>e",
         function()
           require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
         end,
         desc = "Explorer NeoTree (cwd)",
       },
-      { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
-      { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
       {
         "<leader>ge",
         function()
@@ -42,6 +31,13 @@ return {
           require("neo-tree.command").execute({ source = "buffers", toggle = true })
         end,
         desc = "Buffer explorer",
+      },
+      {
+        "<leader>de",
+        function()
+          require("neo-tree.command").execute({ source = "document_symbols", toggle = true })
+        end,
+        desc = "Document symbols explorer",
       },
     },
     deactivate = function()
@@ -83,7 +79,13 @@ return {
               vim.fn.setreg("+", path, "c")
             end,
             desc = "Copy path to '+' reg"
-          }
+          },
+          ["O"] = {
+            function(state)
+              require("lazy.util").open(state.tree:get_node().path, { system = true })
+            end,
+            desc = "Open with System Application",
+          },
         },
       },
       default_component_configs = {
@@ -116,6 +118,18 @@ return {
         end,
       })
     end,
+  },
+
+  -- search/replace in multiple files
+  {
+    "nvim-pack/nvim-spectre",
+    build = false,
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
+    -- stylua: ignore
+    keys = {
+      { "<leader>sr", function() require("spectre").open() end, desc = "Replace in Files (Spectre)" },
+    },
   },
 
   -- Fuzzy finder.
