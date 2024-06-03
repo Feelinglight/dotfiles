@@ -69,6 +69,21 @@ return {
         },
         use_libuv_file_watcher = true,
       },
+      git_status = {
+        window = {
+          position = "right",
+        },
+      },
+      buffers = {
+        window = {
+          position = "right",
+        },
+      },
+      document_symbols = {
+        window = {
+          position = "right",
+        },
+      },
       window = {
         mappings = {
           ["<space>"] = "none",
