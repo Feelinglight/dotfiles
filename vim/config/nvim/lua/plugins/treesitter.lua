@@ -146,6 +146,7 @@ return {
         end, opts.ensure_installed)
       end
       require("nvim-treesitter.configs").setup(opts)
+      vim.treesitter.language.register("bash", "dotenv")
     end,
   },
 
