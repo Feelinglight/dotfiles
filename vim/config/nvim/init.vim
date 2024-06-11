@@ -61,13 +61,6 @@ let mapleader=" "
 " Выход из режима вставки по Ctrl+k
 imap <C-k> <Esc>
 
-" Сохранение на Ctrl+S
-" nmap <C-s> :w<CR>
-" imap <C-s> <Esc>:w<CR>i
-
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
-
 " -------------------- Load lua config --------------------
 lua require('init')
 
