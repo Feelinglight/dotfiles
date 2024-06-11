@@ -1,35 +1,5 @@
 return {
 
-  -- snippets
-  {
-    "L3MON4D3/LuaSnip",
-    build = (not jit.os:find("Windows"))
-        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-      or nil,
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
-    },
-    opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-    },
-    -- stylua: ignore
-    -- keys = {
-    --   {
-    --     "<tab>",
-    --     function()
-    --       return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-    --     end,
-    --     expr = true, silent = true, mode = "i",
-    --   },
-    --   { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
-    --   { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-    -- },
-  },
-
    -- auto completion
   {
     "hrsh7th/nvim-cmp",
@@ -84,7 +54,7 @@ return {
               name = "buffer",
               option = {
                 -- Дефолтная регулярка, но \h и \w заменены на аналоги с добавлением а-яА-Я для
-                -- поддержки русских слов 
+                -- поддержки русских слов
                 keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|[a-zA-Zа-яА-Я_][a-zA-Zа-яА-Я0-9_]*\%([\-.][a-zA-Zа-яА-Я0-9_]*\)*\)]]
               }
             },
@@ -115,4 +85,22 @@ return {
       require("cmp").setup(opts)
     end,
   },
+
+  -- snippets
+  {
+    "L3MON4D3/LuaSnip",
+    build = (not jit.os:find("Windows"))
+        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
+      or nil,
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+      end,
+    },
+    opts = {
+      history = true,
+      delete_check_events = "TextChanged",
+    },
+  }
 }

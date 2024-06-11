@@ -1,3 +1,6 @@
+local utils = require("utils.telescope")
+
+
 return {
 
   -- file explorer
@@ -169,18 +172,30 @@ return {
         desc = "Find Buffer",
       },
       { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
-      { "<leader><space>",  "<cmd>Telescope find_files<cr>", desc = "Find Files (cwd)" },
-      { "<leader>/",
-        function ()
-          require("telescope.builtin").live_grep({
+      { "<leader><space>",
+        function()
+          require("telescope.builtin").find_files({
+            default_text = utils.get_selected_text(),
             additional_args = { "--hidden" }
           })
         end,
+        mode = { "n", "v" },
+        desc = "Find Files (cwd)"
+      },
+      { "<leader>/",
+        function()
+          require("telescope.builtin").live_grep({
+            default_text = utils.get_selected_text(),
+            additional_args = { "--hidden" }
+          })
+        end,
+        mode = { "n", "v" },
         desc="Live grep"
       },
-      { "<leader>sw",
+      { "<leader>w/",
         function ()
           require("telescope.builtin").live_grep({
+            default_text = utils.get_selected_text(),
             additional_args = { "--hidden", "-w" }
           })
         end,
@@ -189,11 +204,11 @@ return {
 
       -- find
       { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Files (git-files)" },
-      { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
+      { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Find recent files" },
 
       -- git
-      { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
-      { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
+      { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Find commits" },
+      { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Show git status" },
 
       -- search
       { '<leader>s"', "<cmd>Telescope registers<cr>", desc = "Registers" },
