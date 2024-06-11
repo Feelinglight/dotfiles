@@ -8,6 +8,8 @@ set spelllang=ru_ru,en_us
 set spelloptions=camel
 set spellcapcheck=
 
+set fileencodings=ucs-bom,utf-8,default,cp1251,latin1
+
 
 " ------ [[ Search ]] ------
 
