@@ -161,7 +161,7 @@ sudo ~/data/develop/tools_tuning/vim/restore.sh
 
 ```bash
 cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings.json
-~/data/develop/tools_tuning/vscode/install_extensions.sh
+~/data/develop/tools_tuning/vscode/restore.sh
 ```
 
 
