@@ -32,8 +32,9 @@ return {
       vim.g.better_whitespace_enabled = 1
       vim.g.strip_whitespace_on_save = 0
       vim.g.strip_whitespace_confirm = 0
-      vim.g.better_whitespace_guicolor = 'white'
+      vim.g.better_whitespace_guicolor = 'red'
       vim.g.current_line_whitespace_disabled_soft = 1
+      vim.g.better_whitespace_filetypes_blacklist = {'dashboard'}
 
       vim.api.nvim_create_autocmd("BufWritePre", {
         callback = function()
