@@ -109,16 +109,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias cat="batcat --paging never -p"
-
-function cs () {
-    cd $1
-    ls
-}
+export PATH=$PATH:$HOME/.local/bin
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 
-function pc(){
-    nohup pycharm-community "$1" > /dev/null 2>&1 &
-}
+alias pc="nohup pycharm-community > /dev/null 2>&1 &!"
+alias pcc="nohup pycharm-community . > /dev/null 2>&1 &!"
 
+alias dolphin="nohup dolphin > /dev/null 2>&1 &!"
+alias dolphinc="nohup dolphin . > /dev/null 2>&1 &!"
+
+alias cat="batcat --paging never -p"
+
+# Чтобы rm -rf * не задавал вопросов
+setopt localoptions rmstarsilent
