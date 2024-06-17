@@ -78,6 +78,7 @@ plugins=(
     zsh-syntax-highlighting
     dirhistory
     zoxide
+    colored-man-pages
     )
 
 source $ZSH/oh-my-zsh.sh
