@@ -102,5 +102,18 @@ return {
       history = true,
       delete_check_events = "TextChanged",
     },
-  }
+  },
+
+  -- Better text-objects
+  {
+    "echasnovski/mini.ai",
+    lazy = false,
+    config = function (_, opts)
+      require("mini.ai").setup(opts)
+    end,
+    opts = {
+      n_lines = 500,
+    }
+  },
+
 }
