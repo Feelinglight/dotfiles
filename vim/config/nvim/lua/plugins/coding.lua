@@ -9,13 +9,19 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
       "lukas-reineke/cmp-under-comparator",
       {
         "tzachar/cmp-fuzzy-path",
         dependencies = {
           "tzachar/fuzzy.nvim",
         },
+      },
+      {
+        "garymjr/nvim-snippets",
+        opts = {
+          friendly_snippets = true,
+        },
+        dependencies = { "rafamadriz/friendly-snippets" },
       },
     },
     opts = function()
@@ -33,8 +39,8 @@ return {
         },
         snippet = {
           expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
+            vim.snippet.expand(args.body)
+          end
         },
         mapping = cmp.mapping.preset.insert({
           ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -55,7 +61,7 @@ return {
         sources = cmp.config.sources(
           {
             { name = "nvim_lsp" },
-            { name = "luasnip" },
+            { name = "snippets" },
             -- { name = "path" },
             {
               name = "fuzzy_path",
@@ -97,6 +103,7 @@ return {
             cmp.config.compare.score,
             cmp.config.compare.recently_used,
             require("cmp-under-comparator").under,
+            cmp.config.compare.locality,
             cmp.config.compare.kind,
             cmp.config.compare.sort_text,
             cmp.config.compare.length,
@@ -108,27 +115,29 @@ return {
     config = function(_, opts)
       require("cmp").setup(opts)
     end,
+    keys = {
+      {
+        "<Tab>",
+        function()
+          return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
+        end,
+        expr = true,
+        silent = true,
+        mode = { "i", "s" },
+      },
+      {
+        "<S-Tab>",
+        function()
+          return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
+        end,
+        expr = true,
+        silent = true,
+        mode = { "i", "s" },
+      },
+    },
   },
 
-  -- snippets
-  {
-    "L3MON4D3/LuaSnip",
-    build = (not jit.os:find("Windows"))
-        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-      or nil,
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
-    },
-    opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-    },
-  },
-
- -- auto pairs
+  -- auto pairs
   {
     "echasnovski/mini.pairs",
     lazy = false,
@@ -161,6 +170,23 @@ return {
     opts = {
       n_lines = 500,
     }
+  },
+
+  {
+    "kkoomen/vim-doge",
+    build = ":call doge#install()",
+    event = 'BufRead',
+    config = function()
+      vim.g.doge_enable_mappings = 0
+      vim.g.doge_doc_standard_python = "reST"
+      vim.g.doge_python_settings = {
+         single_quotes = 0,
+         omit_redundant_param_types = 1
+       }
+    end,
+    keys = {
+      { '<leader>d', '<Plug>(doge-generate)', desc = 'Generate documentation' }
+    },
   },
 
 }

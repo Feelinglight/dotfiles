@@ -36,7 +36,7 @@ return {
         desc = "Buffer explorer",
       },
       {
-        "<leader>de",
+        "<leader>se",
         function()
           require("neo-tree.command").execute({ source = "document_symbols", toggle = true })
         end,
