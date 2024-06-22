@@ -11,6 +11,12 @@ return {
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
       "lukas-reineke/cmp-under-comparator",
+      {
+        "tzachar/cmp-fuzzy-path",
+        dependencies = {
+          "tzachar/fuzzy.nvim",
+        },
+      },
     },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -50,8 +56,16 @@ return {
           {
             { name = "nvim_lsp" },
             { name = "luasnip" },
-            { name = "path" },
+            -- { name = "path" },
+            {
+              name = "fuzzy_path",
+              option  = {
+                -- Если поставить большую глубину, то будет очень долго искать
+                fd_cmd = {'fdfind', '-d', '3', '-p'},
+              }
+            },
           },
+
           {
             {
               name = "buffer",
@@ -73,7 +87,8 @@ return {
             return item
           end,
         },
-        experimental = {
+        performance = {
+          -- max_view_entries = 15,
         },
         sorting = {
           comparators = {
