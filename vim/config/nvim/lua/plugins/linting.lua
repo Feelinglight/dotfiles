@@ -1,3 +1,47 @@
+-- Копия линтера mypy, но всегда включает режим strict
+-- Также убирает подчеркивание всего тела функции, подчеркивается только первая строка сигнатуры
+local function pretty_mypy_linter()
+  local pattern = '([^:]+):(%d+):(%d+):(%d+):(%d+): (%a+): (.*)'
+  local groups = { 'file', 'lnum', 'col', 'end_lnum', 'end_col', 'severity', 'message' }
+  local severities = {
+    error = vim.diagnostic.severity.ERROR,
+    warning = vim.diagnostic.severity.WARN,
+    note = vim.diagnostic.severity.HINT,
+  }
+
+  return {
+    cmd = 'mypy',
+    stdin = false,
+    ignore_exitcode = true,
+    args = {
+      '--strict',
+      '--show-column-numbers',
+      '--show-error-end',
+      '--hide-error-codes',
+      '--hide-error-context',
+      '--no-color-output',
+      '--no-error-summary',
+      '--no-pretty',
+    },
+    parser = function(output, bufnr, linter_cwd)
+      local current_groups = { table.unpack(groups) }
+      -- Если будут другие проблемы с подсветкой, то добавлять их сюда
+      if output:find('Function') ~= nil then
+        -- Если убрать правильное имя из groups, то подчеркиваться будет одна строка
+        current_groups[4] = ''
+      end
+      return require('lint.parser').from_pattern(
+        pattern,
+        current_groups,
+        severities,
+        { ['source'] = 'mypy' },
+        { end_col_offset = 0 }
+      )(output, bufnr, linter_cwd)
+    end
+  }
+end
+
+
 return {
   {
     "mfussenegger/nvim-lint",
@@ -8,7 +52,7 @@ return {
       linters_by_ft = {
         -- Все линтеры должны быть установлены через mason в lsp.lua, либо вручную, если в
         -- Mason их установка не поддерживается!!!
-        python = { "mypy", "ruff" },
+        python = { "pretty_mypy", "ruff" },
         cpp = { "clangtidy" },
         yaml = { "yamllint" },
         cmake = { "cmakelint" },
@@ -21,20 +65,14 @@ return {
       -- or add custom linters.
       ---@type table<string,table>
       linters = {
-        -- -- Example of using selene only when a selene.toml file is present
-        -- selene = {
-        --   -- `condition` is another LazyVim extension that allows you to
-        --   -- dynamically enable/disable linters based on the context.
-        --   condition = function(ctx)
-        --     return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
-        --   end,
-        -- },
+        pretty_mypy = pretty_mypy_linter()
       },
     },
     config = function(_, opts)
       local M = {}
 
       local lint = require("lint")
+
       for name, linter in pairs(opts.linters) do
         if type(linter) == "table" and type(lint.linters[name]) == "table" then
           lint.linters[name] = vim.tbl_deep_extend("force", lint.linters[name], linter)
@@ -42,6 +80,7 @@ return {
           lint.linters[name] = linter
         end
       end
+
       lint.linters_by_ft = opts.linters_by_ft
 
       function M.debounce(ms, fn)
