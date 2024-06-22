@@ -64,6 +64,6 @@ imap <C-k> <Esc>
 " -------------------- Load lua config --------------------
 lua require('init')
 
-" Перегрузку для тем нужно добавлять после инициализации lua
-highlight GitSignsChange guifg=#b89554
+" Убрать тильду в конце буферов
+" set fillchars+=eob:\⠀
 

@@ -19,6 +19,7 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 require("lazy").setup({
   spec = {
     { import = "plugins" },
+    { import = "plugins.colorscheme" },
     -- { import = "plugins.lsp" },
   },
 })
