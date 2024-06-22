@@ -10,11 +10,14 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
+      "lukas-reineke/cmp-under-comparator",
     },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
+
       return {
         completion = {
           completeopt = "menu,menuone,noinsert",
@@ -42,10 +45,7 @@ return {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           }),
-          ["<C-CR>"] = function(fallback)
-            cmp.abort()
-            fallback()
-          end,   }),
+        }),
         sources = cmp.config.sources(
           {
             { name = "nvim_lsp" },
@@ -75,13 +75,22 @@ return {
         },
         experimental = {
         },
-        sorting = defaults.sorting,
+        sorting = {
+          comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            cmp.config.compare.recently_used,
+            require("cmp-under-comparator").under,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+          },
+        },
       }
     end,
     config = function(_, opts)
-      for _, source in ipairs(opts.sources) do
-        source.group_index = source.group_index or 1
-      end
       require("cmp").setup(opts)
     end,
   },
@@ -101,6 +110,29 @@ return {
     opts = {
       history = true,
       delete_check_events = "TextChanged",
+    },
+  },
+
+ -- auto pairs
+  {
+    "echasnovski/mini.pairs",
+    lazy = false,
+    config = function()
+      require('mini.pairs').setup()
+    end,
+    keys = {
+      {
+        "<leader><up>",
+        function()
+          vim.g.minipairs_disable = not vim.g.minipairs_disable
+          if vim.g.minipairs_disable then
+            print("Disabled auto pairs")
+          else
+            print("Enabled auto pairs")
+          end
+        end,
+        desc = "Toggle Auto Pairs",
+      },
     },
   },
 
