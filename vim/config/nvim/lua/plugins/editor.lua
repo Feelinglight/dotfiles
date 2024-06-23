@@ -42,6 +42,15 @@ return {
         end,
         desc = "Document symbols explorer",
       },
+      {
+        "<leader>re",
+        function()
+          require("neo-tree.command").execute({
+            reveal_force_cwd = true,
+          })
+        end,
+        desc = "Reveal current buffer in Neotree",
+      },
     },
     deactivate = function()
       vim.cmd([[Neotree close]])
