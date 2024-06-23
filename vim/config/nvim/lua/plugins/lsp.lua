@@ -1,3 +1,5 @@
+local icons = require("config").defaults.icons
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -10,6 +12,29 @@ return {
       diagnostics = {
         underline = true,
         severity_sort = true,
+        virtual_text = {
+          spacing = 4,
+          prefix = "●",
+          -- source = true,
+        },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = icons.diagnostics.Error,
+            [vim.diagnostic.severity.WARN] = icons.diagnostics.Warn,
+            [vim.diagnostic.severity.HINT] = icons.diagnostics.Hint,
+            [vim.diagnostic.severity.INFO] = icons.diagnostics.Info,
+          },
+        },
+      },
+
+      -- add any global capabilities here
+      capabilities = {
+        workspace = {
+          fileOperations = {
+            didRename = true,
+            willRename = true,
+          },
+        },
       },
 
       servers = {
@@ -35,6 +60,12 @@ return {
         bashls = {},
         pyright = {},
         marksman = {},
+
+        -- TODO: настроить
+        docker_compose_language_service = {},
+
+        -- clangd = {},
+        -- cmake = {},
       }
     },
     config = function(_, opts)
@@ -76,6 +107,7 @@ return {
   {
     "williamboman/mason.nvim",
     lazy = false,
+    build = ":MasonUpdate",
     opts = {
       PATH = "append",
       ensure_installed = {
