@@ -61,10 +61,15 @@ return {
         pyright = {},
         ruff = {},
         marksman = {},
+        -- TODO: настроить (чтобы работало на файлах с окончанием compose.yaml)
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
+        yamlls = {},
 
-        -- TODO: настроить
+        -- TODO: настроить (чтобы работало на файлах с окончанием compose.yaml)
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#docker_compose_language_service
         docker_compose_language_service = {},
 
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
         -- clangd = {},
         -- cmake = {},
       }
@@ -119,7 +124,7 @@ return {
         "shellcheck",
         "mypy",
         "ruff",
-        -- "ruff_lsp",
+        "yaml-language-server",
       },
     },
     config = function(_, opts)
