@@ -59,6 +59,7 @@ return {
 
         bashls = {},
         pyright = {},
+        ruff = {},
         marksman = {},
 
         -- TODO: настроить
@@ -118,6 +119,7 @@ return {
         "shellcheck",
         "mypy",
         "ruff",
+        -- "ruff_lsp",
       },
     },
     config = function(_, opts)

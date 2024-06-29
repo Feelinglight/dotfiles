@@ -52,7 +52,7 @@ return {
       linters_by_ft = {
         -- Все линтеры должны быть установлены через mason в lsp.lua, либо вручную, если в
         -- Mason их установка не поддерживается!!!
-        python = { "pretty_mypy", "ruff" },
+        python = { "pretty_mypy" },
         cpp = { "clangtidy" },
         yaml = { "yamllint" },
         cmake = { "cmakelint" },
