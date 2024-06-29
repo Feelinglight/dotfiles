@@ -38,6 +38,7 @@ return {
       },
 
       servers = {
+        -- Lua
         lua_ls = {
           settings = {
             Lua = {
@@ -57,10 +58,19 @@ return {
           keys = {},
         },
 
+        -- shell
         bashls = {},
+
+        -- python
         pyright = {},
         ruff = {},
+
+        -- Plain
+        -- TODO: Настроить
         marksman = {},
+        esbonio = {},
+
+        -- Yaml
         -- TODO: настроить (чтобы работало на файлах с окончанием compose.yaml)
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
         yamlls = {},
@@ -69,6 +79,7 @@ return {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#docker_compose_language_service
         docker_compose_language_service = {},
 
+        -- C++
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
         -- clangd = {},
         -- cmake = {},
@@ -125,6 +136,7 @@ return {
         "mypy",
         "ruff",
         "yaml-language-server",
+        "esbonio",
       },
     },
     config = function(_, opts)
