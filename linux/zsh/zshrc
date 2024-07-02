@@ -116,6 +116,9 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 alias pc="nohup pycharm-community > /dev/null 2>&1 &!"
 alias pcc="nohup pycharm-community . > /dev/null 2>&1 &!"
 
+alias clion="nohup clion > /dev/null 2>&1 &!"
+alias clionc="nohup clion . > /dev/null 2>&1 &!"
+
 alias dolphin="nohup dolphin > /dev/null 2>&1 &!"
 alias dolphinc="nohup dolphin . > /dev/null 2>&1 &!"
 
