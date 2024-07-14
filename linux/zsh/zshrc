@@ -122,7 +122,7 @@ alias clionc="nohup clion . > /dev/null 2>&1 &!"
 alias dolphin="nohup dolphin > /dev/null 2>&1 &!"
 alias dolphinc="nohup dolphin . > /dev/null 2>&1 &!"
 
-alias cat="batcat --paging never -p"
+alias cat="batcat --paging=never -p"
 
 # Чтобы rm -rf * не задавал вопросов
 setopt localoptions rmstarsilent
