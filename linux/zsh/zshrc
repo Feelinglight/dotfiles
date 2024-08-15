@@ -79,6 +79,7 @@ plugins=(
     dirhistory
     zoxide
     colored-man-pages
+    pip
     )
 
 source $ZSH/oh-my-zsh.sh
