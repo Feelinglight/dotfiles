@@ -80,6 +80,8 @@ plugins=(
     zoxide
     colored-man-pages
     pip
+    copybuffer
+    copypath
     )
 
 source $ZSH/oh-my-zsh.sh
