@@ -165,6 +165,12 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 ~/data/develop/tools_tuning/vscode/restore.sh
 ```
 
+## Kate
+
+- Настройка -> Настроить Kate... -> Сеансы -> Поведение при запуске и завершении работы
+
+  - Убрать галку "Показывать страницу приветствия при открытии нового окна"
+
 
 ## Konsole
 
