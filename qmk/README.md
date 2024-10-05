@@ -11,7 +11,7 @@ qmk flash -kb -lily58 -km vial
 ```
 
 - Прошивать каждую половинку отдельно, без соединения половинок
-- В vial-qmk/keyboards/lily58/rules.mk добавить:
+- В **vial-qmk/keyboards/lily58/rev1/keymaps/vial/rules.mk** добавить:
 
   - ``COMBO_ENABLE = yes``
   - ``KEY_OVERRIDE_ENABLE = yes``
