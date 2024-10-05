@@ -29,12 +29,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Space reduction */
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 6
-#define VIAL_TAP_DANCE_ENTRIES 2
+#define DYNAMIC_KEYMAP_LAYER_COUNT 4
+#define VIAL_KEY_OVERRIDE_ENTRIES 12
+#define VIAL_COMBO_ENTRIES 6
+#define VIAL_TAP_DANCE_ENTRIES 6
+
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 #define NO_ACTION_ONESHOT
-#define VIAL_COMBO_ENTRIES 2
 
 /* Select hand configuration */
 
