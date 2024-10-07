@@ -112,18 +112,31 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Автоматическая активация venv
-python_venv() {
-  MYVENV=./venv
-  # when you cd into a folder that contains $MYVENV
-  [[ -d $MYVENV ]] && source $MYVENV/bin/activate > /dev/null 2>&1
-  # when you cd into a folder that doesn't
-  [[ ! -d $MYVENV ]] && deactivate > /dev/null 2>&1
-}
-autoload -U add-zsh-hook
-add-zsh-hook chpwd python_venv
+autovenv() {
+    local current_dir="$PWD"
 
-python_venv
+    while true; do
+        if [ -f "$current_dir/venv/bin/activate" ]; then
+            source "$current_dir/venv/bin/activate"
+            return
+        fi
+
+        if [ "$current_dir" = "/" ]; then
+            break
+        fi
+
+        current_dir=$(dirname "$current_dir")
+    done
+
+    if type deactivate >/dev/null 2>&1; then
+        deactivate
+    fi
+}
+
+autoload -U add-zsh-hook
+add-zsh-hook chpwd autovenv
+
+autovenv
 
 export PATH=$PATH:$HOME/.local/bin
 
