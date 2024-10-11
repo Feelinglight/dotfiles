@@ -16,4 +16,5 @@ map H :action NextEditorTab<cr>
 map L :action PreviousEditorTab<cr>
 
 Plug 'machakann/vim-highlightedyank'
+Plug 'bronson/vim-visual-star-search'
 
