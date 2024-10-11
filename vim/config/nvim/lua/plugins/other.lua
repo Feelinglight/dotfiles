@@ -6,6 +6,9 @@ return {
   -- Делает возможным использования . с vim-surround
   { 'tpope/vim-repeat' },
 
+  -- Поиск выделенных символов по *
+  { 'bronson/vim-visual-star-search' },
+
   -- Автоматическое закрытие скобок на enter
   -- { 'rstacruz/vim-closer' },
 

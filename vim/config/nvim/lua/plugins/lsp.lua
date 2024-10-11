@@ -79,6 +79,8 @@ return {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#docker_compose_language_service
         docker_compose_language_service = {},
 
+        clangd = {},
+        cmake = {},
         -- C++
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
         -- clangd = {},
