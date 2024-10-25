@@ -148,10 +148,12 @@ alias pcc="nohup pycharm-community . > /dev/null 2>&1 &!"
 alias clion="nohup clion > /dev/null 2>&1 &!"
 alias clionc="nohup clion . > /dev/null 2>&1 &!"
 
-alias dolphin="nohup dolphin > /dev/null 2>&1 &!"
-alias dolphinc="nohup dolphin . > /dev/null 2>&1 &!"
+alias dol="nohup dolphin > /dev/null 2>&1 &!"
+alias dolc="nohup dolphin . > /dev/null 2>&1 &!"
 
-alias cat="batcat --paging=never -p"
+alias pyv="python3 -m venv venv"
+
+alias cat="batcat -pp"
 
 # Чтобы rm -rf * не задавал вопросов
 setopt localoptions rmstarsilent
