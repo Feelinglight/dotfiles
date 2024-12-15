@@ -2,6 +2,7 @@ set surround
 set incsearch
 set ignorecase
 set smartcase
+set ideajoin
 set hls " Отключать только вручную через ввод noh
 " set clipboard+=unnamedplus
 set clipboard^=unnamedplus
