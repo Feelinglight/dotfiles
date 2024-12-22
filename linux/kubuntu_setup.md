@@ -36,19 +36,19 @@ sudo apt remove -y ibus
 - Скачать tar.gz pycharm-community с офф. сайта, установить:
 
   ```bash
-  sudo tar xzf CLion-*.tar.gz -C /opt
-  sudo ln -s /opt/clion-*/bin/clion /usr/local/bin/clion
-  ```
-
-### Clion
-
-- Скачать tar.gz clion с офф. сайта, установить:
-
-  ```bash
   sudo tar xzf pycharm-*.tar.gz -C /opt/
   sudo ln -s /opt/pycharm-*/bin/pycharm /usr/local/bin/pycharm-community
   ```
   
+### Clion
+
+- Скачать tar.gz clion с офф. сайта, установить:
+    
+  ```bash
+  sudo tar xzf CLion-*.tar.gz -C /opt
+  sudo ln -s /opt/clion-*/bin/clion /usr/local/bin/clion
+  ```
+
 ### npm
 
 Некоторые плагины neovim (lsp bashls, cspell) хотят новую версию npm.
