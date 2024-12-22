@@ -148,6 +148,8 @@ mkdir -p ~/data/develop
     - Kate
     - Konsole
     - VScode
+    - clion
+    - pycharm-community
     - gnome-calculator
     - remmina
 
