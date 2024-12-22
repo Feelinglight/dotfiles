@@ -36,7 +36,7 @@ sudo apt remove -y ibus
 
   ```bash
   sudo tar xzf pycharm-*.tar.gz -C /opt/
-  sudo ln -s /opt/pycharm-*/bin/pycharm.sh /usr/local/bin/pycharm-community
+  sudo ln -s /opt/pycharm-*/bin/pycharm /usr/local/bin/pycharm-community
   ```
 
 ### npm
@@ -97,8 +97,8 @@ mkdir -p ~/data/develop
 
 - Управление сеансами
 
-  - При входе -> Начинать с пустого сеанса
-  - Основное -> Убрать галку Предлагать параметры выключения
+  - Восстановление сеанса -> Начинать с пустого сеанса
+  - Экран завершения работы -> Убрать галку "Показывать"
   
 - Комбинации клавиш
 
