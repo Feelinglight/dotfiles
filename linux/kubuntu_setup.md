@@ -221,7 +221,7 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 - Настроить remmina
 
   ```sh
-  sudo apt install -y remmina
+  sudo apt install -y remmina openvpn-systemd-resolved
   ```
 
   - Добавить в remmina подключение к box5
