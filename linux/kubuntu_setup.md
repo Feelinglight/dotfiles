@@ -205,6 +205,7 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 
   - Добавить комбинацию "Ctrl + Ins"
 
+- Нажать ``Ctrl + Shift + M``, чтобы скрыть верхнее меню
 
 ## Dolphin
 
