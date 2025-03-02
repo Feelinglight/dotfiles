@@ -16,6 +16,14 @@ sudo apt remove -y ibus
 > ibus удаляется для отключения бесполезной иконки EN справа на панели задач
 > После этого лучше перезайти в KDE, т. к. все открытые окна перестанут реагировать на нажатия клавиш
 
+### Syncthing
+
+```bash
+sudo apt install syncthing
+
+sudo systemctl enable syncthing@dmitry.service
+sudo systemctl start syncthing@dmitry.service
+```
 
 ## Не apt
 
