@@ -288,28 +288,29 @@ return {
     lazy = false,
     opts = {
       plugins = { spelling = true },
-      defaults = {
+      defaults = {},
+      spec = {
         mode = { "n", "v" },
-        ["g"] = { name = "+goto" },
-        ["]"] = { name = "+next" },
-        ["["] = { name = "+prev" },
-        ["<leader><tab>"] = { name = "+tabs" },
-        ["<leader>b"] = { name = "+buffer" },
-        ["<leader>c"] = { name = "+code" },
-        ["<leader>f"] = { name = "+file/find" },
-        ["<leader>g"] = { name = "+git" },
-        ["<leader>gh"] = { name = "+hunks" },
-        ["<leader>q"] = { name = "+quit/session" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>u"] = { name = "+ui" },
-        ["<leader>w"] = { name = "+windows" },
-        ["<leader>x"] = { name = "+diagnostics/quickfix" },
+        { "<leader><tab>", name = "tabs" },
+        { "<leader>b", name = "buffer" },
+        { "<leader>c", name = "code" },
+        { "<leader>f", name = "file/find" },
+        { "<leader>g", name = "git" },
+        { "<leader>gh", name = "hunks" },
+        { "<leader>q", name = "quit/session" },
+        { "<leader>s", name = "search" },
+        { "<leader>u", name = "ui" },
+        { "<leader>w", name = "windows" },
+        { "<leader>x", name = "diagnostics/quickfix" },
+        { "[", name = "prev" },
+        { "]", name = "next" },
+        { "g", name = "goto" },
       },
     },
     config = function(_, opts)
       local wk = require("which-key")
       wk.setup(opts)
-      wk.register(opts.defaults)
+      wk.add(opts.defaults)
     end,
   },
   -- Flash enhances the built-in search functionality by showing labels
@@ -424,19 +425,19 @@ return {
   {
     "folke/trouble.nvim",
     lazy = false,
-    cmd = { "TroubleToggle", "Trouble" },
+    cmd = { "Trouble" },
     opts = { use_diagnostic_signs = true },
     keys = {
       {
-        "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>",
+        "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>",
         desc = "Document Diagnostics (Trouble)"
       },
       {
-        "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+        "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
         desc = "Workspace Diagnostics (Trouble)"
       },
-      { "<leader>xL", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
-      { "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
+      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
       {
         "[q",
         function()
