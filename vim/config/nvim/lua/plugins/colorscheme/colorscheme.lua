@@ -16,6 +16,7 @@ return {
         callback = function()
           local colors = require('plugins.colorscheme.darcula.colors')
           vim.api.nvim_set_hl(0, "GitSignsChange", { fg = colors.maple_syrup })
+          vim.api.nvim_set_hl(0, "NeoTreeTitleBar", { fg = colors.maple_syrup })
         end,
       })
       vim.cmd.colorscheme('tokyonight')
