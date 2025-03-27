@@ -73,9 +73,9 @@ sudo n lts
 
 ```sh
 sudo apt install curl libfuse2 g++ npm xclip ripgrep luarocks
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod +x nvim.appimage
-sudo mv nvim.appimage /usr/local/bin/nvim
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.appimage
+chmod +x nvim-linux-arm64.appimage
+sudo mv nvim-linux-arm64.appimage /usr/local/bin/nvim
 ```
 
 ### Nerd fonts
