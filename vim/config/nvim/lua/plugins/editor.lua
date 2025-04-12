@@ -244,6 +244,7 @@ return {
         defaults = {
           prompt_prefix = " ",
           selection_caret = " ",
+          file_ignore_patterns = { '.git' },
           -- open files in the first window that is an actual file.
           -- use the current window if no other window is available.
           get_selection_window = function()
