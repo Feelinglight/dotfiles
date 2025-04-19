@@ -71,13 +71,42 @@ return {
         esbonio = {},
 
         -- Yaml
-        -- TODO: настроить (чтобы работало на файлах с окончанием compose.yaml)
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#yamlls
-        yamlls = {},
+        yamlls = {
+          -- Have to add this for yamlls to understand that we support line folding
+          capabilities = {
+            textDocument = {
+              foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true,
+              },
+            },
+          },
+          settings = {
+            redhat = { telemetry = { enabled = false } },
+            yaml = {
+              format = {
+                enable = true,
+                proseWrap = 120,
+              },
+              validate = true,
+              editor = {
+                tabSize = 4,
+                -- formatOnType = true,
+              },
+              schemas = {
+                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "**/*compose.yaml",
+              },
+              schemaStore = {
+                url = "https://www.schemastore.org/api/json/catalog.json",
+                enable = true,
+              }
+            }
+          }
+        },
 
         -- TODO: настроить (чтобы работало на файлах с окончанием compose.yaml)
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#docker_compose_language_service
-        docker_compose_language_service = {},
+        -- docker_compose_language_service = {},
 
         clangd = {},
         cmake = {},
