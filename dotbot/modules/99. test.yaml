@@ -1,0 +1,16 @@
+- defaults:
+    shell:
+      stdout: true
+      stderr: true
+
+- shell:
+    - command:
+        sudo apt install -y
+        nano
+        zsh
+      description: Install packages
+      stdout: true
+
+    - command: |
+        ls .
+      description: Install packages

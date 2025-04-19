@@ -1,0 +1,45 @@
+- defaults:
+    shell:
+      stdout: true
+      stderr: true
+
+- shell:
+    - command:
+        - sudo apt-get install -y
+        - git
+        - curl
+        - zsh
+        - bat
+        - tree
+        - zoxide
+        - htop
+        - fzf
+        - openssh-server
+        # python
+        - python3-venv
+        - python3-pip
+
+      description: Install packages
+
+    - command:
+        sh -c
+        "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        "" --unattended
+      description: Install Oh-My-Zsh
+
+    - command: sudo chsh -s /usr/bin/zsh "$USER"
+      description: Change shell to zsh
+
+    - command:
+        git clone
+        https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+      description: Install zsh-autosuggestions
+
+    - command:
+        git clone
+        https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+      description: Install zsh-syntax-highlighting
+
+- link:
+    ~/.zshrc: config/zshrc
+

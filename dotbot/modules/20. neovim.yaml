@@ -1,0 +1,38 @@
+- defaults:
+    shell:
+      stdout: true
+      stderr: true
+
+- shell:
+    - command:
+        - sudo apt-get install -y
+        - git
+        - curl
+        - luarocks
+        - npm
+        - libfuse2
+        - g++
+        - ripgrep
+        - fd-find
+        - fzf
+        # Для переключения на английский при выходе в normal mode
+        - xclip
+        # Для плагинов на питоне
+        - python3-venv
+        - python3-pip
+
+      description: Install packages
+
+    # Некоторые плагины neovim (lsp bashls, cspell) хотят новую версию npm.
+    - command: |
+        sudo npm install -g n &&
+        sudo n lts
+      description: Update npm
+
+    - command: |
+        curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage &&
+        chmod +x nvim-linux-x86_64.appimage &&
+        sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
+      description: Install neovim
+
+

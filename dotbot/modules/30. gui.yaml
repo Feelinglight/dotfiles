@@ -1,0 +1,34 @@
+- defaults:
+    shell:
+      stdout: true
+      stderr: true
+
+- shell:
+    - command:
+        - sudo apt-get install -y
+        - kubuntu-desktop
+        - fontconfig
+        # git
+        - git
+        - git-gui
+        # Виртуализация
+        - virt-manager
+        - virt-viewer
+
+    # ibus удаляется для отключения бесполезной иконки EN на панели задач
+    # После этого лучше перезайти в KDE, т. к. все открытые окна перестанут реагировать
+    # на нажатия клавиш
+    - command: sudo apt remove -y ibus
+
+
+    - command:
+        curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz &&
+        mkdir ./JetBrainsMono &&
+        tar xf ./JetBrainsMono.tar.xz -C ./JetBrainsMono &&
+
+        mkdir -p ~/.local/share/fonts &&
+        mv ./JetBrainsMono/*.ttf ~/.local/share/fonts &&
+        fc-cache ~/.local/share/fonts &&
+
+        rm -rf ./JetBrainsMono.tar.xz ./JetBrainsMono
+

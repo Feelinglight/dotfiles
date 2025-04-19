@@ -1,0 +1,20 @@
+- defaults:
+    shell:
+      stdout: true
+      stderr: true
+
+- shell:
+    - command:
+        - sudo apt-get install -y
+        - syncthing
+        - solaar
+        - remmina
+        # Для vpn к работе
+        - openvpn-systemd-resolved
+      description: Install packages
+
+    - command: |
+        sudo systemctl enable syncthing@dmitry.service &&
+        sudo systemctl start syncthing@dmitry.service
+      description: Setup syncthing daemon
+
