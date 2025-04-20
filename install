@@ -13,14 +13,15 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 run_dotbot () {
   local config
   config="$1"
-
-  "$BASEDIR/$DOTBOT_DIR/$DOTBOT_BIN" -d "$BASEDIR" -c "$config" $ARGS
+  "$BASEDIR/$DOTBOT_DIR/$DOTBOT_BIN" -d "$BASEDIR" -c "$config"
 }
 
-# run_dotbot 'dotbot/modules/00. update.yaml'
-# run_dotbot 'dotbot/modules/shell.yaml'
-run_dotbot 'dotbot/modules/20. neovim.yaml'
-# run_dotbot 'dotbot/modules/vscode.yaml'
-# run_dotbot 'dotbot/modules/home.yaml'
-# run_dotbot 'dotbot/modules/99. test.yaml'
+sudo apt-get update
+
+run_dotbot 'modules/10.shell.yaml'
+run_dotbot 'modules/20.neovim.yaml'
+run_dotbot 'modules/30.gui.yaml'
+run_dotbot 'modules/80.home.yaml'
+run_dotbot 'modules/90.work.yaml'
+run_dotbot 'modules/99.test.yaml'
 
