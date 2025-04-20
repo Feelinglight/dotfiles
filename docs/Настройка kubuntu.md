@@ -1,115 +1,41 @@
-# Настройка окружения kubuntu-desktop после установки Ubuntu
+# Подготовка KDE
 
-## Apt
+## Автоматическая установка
 
-```bash
-sudo apt update
-sudo apt full-upgrade
-# npm нужен для lsp сервера pyright для neovim
-sudo apt install -y kubuntu-desktop openssh-server \
-  curl zsh virt-manager virt-viewer bat htop git \
-  git-gui python3-venv python3-pip fontconfig \
-  npm fzf zoxide fd-find tree
-sudo apt remove -y ibus
-```
-
-> ibus удаляется для отключения бесполезной иконки EN справа на панели задач
-> После этого лучше перезайти в KDE, т. к. все открытые окна перестанут реагировать на нажатия клавиш
-
-### Syncthing
+> [!WARNING]
+> Автоматическая установка не исключает настройку GUI
 
 ```bash
-sudo apt install syncthing
-
-sudo systemctl enable syncthing@dmitry.service
-sudo systemctl start syncthing@dmitry.service
+git clone git@github.com:Feelinglight/dotfiles.git ~/data/develop/dotfiles
+cd ~/data/develop/dotfiles
+# Если какие-то модули не нужны, закомментировать их в ./install
+./install
 ```
 
-## Не apt
+## Настройка GUI
 
-### Chrome
+## Google Chrome
 
-- Скачать deb пакет хром с офф. сайта
-  - установить
-  - войти в аккаунт google
+- войти в аккаунт google в хроме
 
-
-### VS Code
-
-- Скачать deb пакет vscode с офф. сайта, установить
-
-
-### Pycharm
-
-- Скачать tar.gz pycharm-community с офф. сайта, установить:
-
-  ```bash
-  sudo tar xzf pycharm-*.tar.gz -C /opt/
-  sudo ln -s /opt/pycharm-*/bin/pycharm /usr/local/bin/pycharm-community
-  ```
-  
-### Clion
-
-- Скачать tar.gz clion с офф. сайта, установить:
-    
-  ```bash
-  sudo tar xzf CLion-*.tar.gz -C /opt
-  sudo ln -s /opt/clion-*/bin/clion /usr/local/bin/clion
-  ```
-
-### npm
-
-Некоторые плагины neovim (lsp bashls, cspell) хотят новую версию npm.
-
-```sh
-sudo npm install -g n
-sudo n lts
-```
-
-
-### NeoVim
-
-> В ppa для ubuntu максимальная версия **0.7**, что сильно меньше актуальной.
-
-```sh
-sudo apt install curl libfuse2 g++ npm xclip ripgrep luarocks
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
-chmod +x nvim-linux-x86_64.appimage
-sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
-```
-
-### Nerd fonts
-
-```sh
-curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
-mkdir ./JetBrainsMono
-tar xf ./JetBrainsMono.tar.xz -C ./JetBrainsMono
-
-mkdir -p ~/.local/share/fonts
-mv ./JetBrainsMono/*.ttf ~/.local/share/fonts
-fc-cache ~/.local/share/fonts
-
-rm -rf ./JetBrainsMono.tar.xz ./JetBrainsMono
-```
-
-## Папки
+## VS Code
 
 ```bash
-mkdir -p ~/data/develop
+cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings.json
+~/data/develop/tools_tuning/vscode/restore.sh
 ```
-
 
 ## Параметры системы
 
 - Перезайти из Gnome в KDE
 - Клавиатура:
-  
+
   - Убедиться, что установлены 2 раскладки клавиатуры (en, ru)
   - Задать комбинацию переключения раскладок **Alt + Shift**
   - Включить NumLock на старте
 
 - Переключение окон
-  
+
   - Убрать галку "Показывать выбранное окно"
   - Выбрать Thumbnail Grid, если не будет в списке, загрузить из kde store
 
@@ -117,7 +43,7 @@ mkdir -p ~/data/develop
 
   - Восстановление сеанса -> Начинать с пустого сеанса
   - Экран завершения работы -> Убрать галку "Показывать"
-  
+
 - Комбинации клавиш
 
   - Kwin -> Переключиться на один рабочий стол вправо -> Win + Tab
@@ -142,13 +68,13 @@ mkdir -p ~/data/develop
   - ПКМ -> Настройка виджета "Панель задач...":
 
     - Группировка: Не группировать
-   
+
   - ПКМ на виджете "Переключение рабочих столов" -> "Настроить виджет ..." -> Поставить галку "Показывать значки приложений на схемах окон"
-   
+
   - ПКМ на панели -> Добавить виджеты -> Переключение рабочих столов
-    
+
   - Значки:
- 
+
     - Параметры системы
     - Dolphin
     - Chrome
@@ -162,30 +88,6 @@ mkdir -p ~/data/develop
     - remmina
 
 
-## oh-my-zsh
-
-```bash
-git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
-~/data/develop/tools_tuning/linux/zsh/setup.sh
-```
-
-
-## nvim
-
-```bash
-git clone https://github.com/Feelinglight/tools_tuning ~/data/develop/tools_tuning
-~/data/develop/tools_tuning/vim/restore.sh
-sudo ~/data/develop/tools_tuning/vim/restore.sh
-```
-
-
-## vscode
-
-```bash
-cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings.json
-~/data/develop/tools_tuning/vscode/restore.sh
-```
-
 ## Kate
 
 - Настройка -> Настроить Kate... -> Сеансы -> Поведение при запуске и завершении работы
@@ -198,9 +100,9 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 - Настройка -> Создать новый профиль
 
   - Поставить галку "Профиль по умолчанию"
-  
+
   - Команда: /bin/zsh
- 
+
 - Настройка -> Настроить профиль... -> Внешний вид
 
   - Выбрать шрифт JetBrainsMonoNL Nerd Font / Regular / 10
@@ -224,16 +126,10 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
   - Изображения
   - Видеофайлы
   - Документы
-    
+
 ## Работа
 
-- Настроить remmina
-
-  ```sh
-  sudo apt install -y remmina openvpn-systemd-resolved
-  ```
-
-  - Добавить в remmina подключение к box5
+- Добавить в remmina подключение к box5
 
 - Параметры системы -> Общие папки Windows:
 
@@ -247,35 +143,9 @@ cp ~/data/develop/tools_tuning/vscode/settings.json ~/.config/Code/User/settings
 ## Ноутбук
 
 - Включить отображение процентов на виджете батареи
-- Если bluetooth-мышь, то ``sudo apt install solaar`` для отображения заряда мыши
 - Настроить отпечаток пальца
 - Настроить touche + touchegg:
-  
+
     - Свайп 3 пальцами - переключить комнату
     - В хроме свайп 3 пальцами вправо - средняя кнопка мыши
 
-
-# Проблемы
-
-- Не сохраняются размеры окон
-
-  Сделать левый экран главным
-
-- Не открываются Параметры системы (ошибка ``open collaboration service (0)``)
-
-  Запускать из консоли командой ``LANG=en_US.UTF-8 systemsettings``
-
-- При запуске Dolphin открывается zsh вместо oh-my-zsh
-
-  [С этим нужно жить](https://bugs.kde.org/show_bug.cgi?id=407990)((
-
-- Chrome показывает уведомление об обновлениях при запуске
-
-  В файле **nvim /usr/share/applications/google-chrome.desktop** исправить первую строку вида
-  ```ini
-  Exec=/usr/bin/google-chrome-stable
-  ```
-  на
-  ```ini
-  Exec=/usr/bin/google-chrome-stable --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' %U
-  ```
