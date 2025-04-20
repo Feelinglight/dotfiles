@@ -20,7 +20,6 @@
         # Для плагинов на питоне
         - python3-venv
         - python3-pip
-
       description: Install packages
 
     # Некоторые плагины neovim (lsp bashls, cspell) хотят новую версию npm.
@@ -35,4 +34,17 @@
         sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
       description: Install neovim
 
+- link:
+    ~/.config/nvim:
+        path: config/nvim
+
+- shell:
+    - command: sudo ln -s /root/.config/nvim
+      description: Copy neovim config for root
+
+    - command: nvim --headless "+Lazy! sync" +qa
+      description: Install lazy plugins
+
+    - command: sudo nvim --headless "+Lazy! sync" +qa
+      description: Install lazy plugins for root
 

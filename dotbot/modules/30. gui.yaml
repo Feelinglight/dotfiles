@@ -14,12 +14,13 @@
         # Виртуализация
         - virt-manager
         - virt-viewer
+      description: Install packages
 
     # ibus удаляется для отключения бесполезной иконки EN на панели задач
     # После этого лучше перезайти в KDE, т. к. все открытые окна перестанут реагировать
     # на нажатия клавиш
     - command: sudo apt remove -y ibus
-
+      description: Remove ibus
 
     - command:
         curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz &&
@@ -31,4 +32,38 @@
         fc-cache ~/.local/share/fonts &&
 
         rm -rf ./JetBrainsMono.tar.xz ./JetBrainsMono
+      description: Install JetBrainsMono font
+
+    - command:
+        curl -L -o google-chrome.deb
+            https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+        sudo dpkg -i google-chrome.deb &&
+        sudo rm -rf google-chrome.deb
+      description: Install google-chrome
+
+    - command:
+        curl -LO https://download.jetbrains.com/python/pycharm-community-2025.1.tar.gz &&
+        sudo tar xzf pycharm-*.tar.gz -C /opt/ &&
+        sudo ln -s /opt/pycharm-*/bin/pycharm /usr/local/bin/pycharm-community
+      description: Install pycharm
+
+    - command:
+        curl -LO https://download-cdn.jetbrains.com/cpp/CLion-2025.1.tar.gz &&
+        sudo tar xzf CLion-*.tar.gz -C /opt &&
+        sudo ln -s /opt/clion-*/bin/clion /usr/local/bin/clion
+      description: Install clion
+
+    - command:
+        curl -L -o vscode.deb
+            https://vscode.download.prss.microsoft.com/dbazure/download/stable/17baf841131aa23349f217ca7c570c76ee87b957/code_1.99.3-1744761595_amd64.deb &&
+        sudo rm -rf vscode.deb
+      description: Install clion
+
+- link:
+    ~/.zshrc:
+        path: config/zshrc
+        force: true
+    ~/.ideavimrc:
+        path: config/ideavimrc
+
 

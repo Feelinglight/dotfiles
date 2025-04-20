@@ -157,3 +157,4 @@ alias cat="batcat -pp"
 
 # Чтобы rm -rf * не задавал вопросов
 setopt localoptions rmstarsilent
+

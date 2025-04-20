@@ -19,8 +19,8 @@ run_dotbot () {
 
 # run_dotbot 'dotbot/modules/00. update.yaml'
 # run_dotbot 'dotbot/modules/shell.yaml'
-# run_dotbot 'dotbot/modules/neovim.yaml'
+run_dotbot 'dotbot/modules/20. neovim.yaml'
 # run_dotbot 'dotbot/modules/vscode.yaml'
 # run_dotbot 'dotbot/modules/home.yaml'
-run_dotbot 'dotbot/modules/99. test.yaml'
+# run_dotbot 'dotbot/modules/99. test.yaml'
 
