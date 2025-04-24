@@ -3,7 +3,12 @@
       stdout: true
       stderr: true
 
-- shell:
-    - command: |
-        ls .
-      description: Install packages
+# - shell:
+#     - command: |
+#         ls .
+#       description: Install packages
+
+- link:
+    ~/.config/nvim:
+        path: config/lazyvim
+
