@@ -6,6 +6,7 @@
 
 -- DO NOT USE `LazyVim.safe_keymap_set` IN YOUR OWN CONFIG!!
 -- use `vim.keymap.set` instead
+
 local map = vim.keymap.set
 
 --- changed
@@ -17,8 +18,6 @@ map({ "i", "n", "s" }, "<esc>", function()
   return "<esc>"
 end, { expr = true, desc = "Escape snippet" })
 
-if vim.lsp.inlay_hint then
-  Snacks.toggle.inlay_hints():map("<leader>uh")
-end
+map("n", "<leader><tab><tab>", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
 --- custom
