@@ -9,6 +9,10 @@
 
 local map = vim.keymap.set
 
+-- deleted
+
+-- vim.keymap.del()
+
 --- changed
 
 -- Clear search and stop snippet on escape
