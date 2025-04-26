@@ -9,11 +9,14 @@
 
 local map = vim.keymap.set
 
--- deleted
+------------------- deleted -------------------
 
--- vim.keymap.del()
+-- profiler
+vim.keymap.del("n", "<Space>dpp")
+vim.keymap.del("n", "<Space>dph")
+vim.keymap.del("n", "<Space>dps")
 
---- changed
+------------------- changed -------------------
 
 -- Clear search and stop snippet on escape
 map({ "i", "n", "s" }, "<esc>", function()
@@ -24,4 +27,4 @@ end, { expr = true, desc = "Escape snippet" })
 
 map("n", "<leader><tab><tab>", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
---- custom
+------------------- custom -------------------
