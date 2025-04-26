@@ -23,6 +23,7 @@ require("lazy").setup({
     { import = "plugins.coding" },
     { import = "plugins.editor" },
     { import = "plugins.other" },
+    { import = "plugins.treesitter" },
     { import = "plugins.ui" },
   },
   defaults = {

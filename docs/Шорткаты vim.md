@@ -21,7 +21,7 @@
 - J (Join) - объединить текущую и следующую строки и установить курсор на место объединения
 - ciw (change inner word) - изменить слово под курсором
 - ciW - изменить слово под курсором, включая символы типа :,* и т. д.
-- c\<N\>l - изменить N символов под курсором 
+- c\<N\>l - изменить N символов под курсором
 - cf\<char\> - изменить строку от курсора до следующего <char> (включая <char>)
 - S - изменить целую строку
 - == - исправить выравнивание текущей строки
@@ -109,7 +109,7 @@ end, { desc = "Format" })
 
 -- diagnostic
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
- 
+
 -- Snacks
 if vim.lsp.inlay_hint then
   Snacks.toggle.inlay_hints():map("<leader>uh")
@@ -128,5 +128,8 @@ map("n", "<c-/>",      function() Snacks.terminal(nil, { cwd = LazyVim.root() })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
+
+{ "<BS>", desc = "Decrement Selection", mode = "x" },
+{ "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
 ```
 
