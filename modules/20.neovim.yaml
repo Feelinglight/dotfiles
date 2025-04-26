@@ -23,9 +23,11 @@
       description: Install packages
 
     # Некоторые плагины neovim (lsp bashls, cspell) хотят новую версию npm.
+    # ast-grep используется в плагине grug-far.nvim
     - command: |
         sudo npm install -g n &&
         sudo n lts
+        npm install --global @ast-grep/cli
       description: Update npm
 
     - command: |

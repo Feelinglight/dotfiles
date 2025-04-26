@@ -6,6 +6,14 @@ return {
   -- Делает возможным использования . с vim-surround
   { "tpope/vim-repeat" },
 
+  -- -- Перед отменой переместить курсор на место отмены
+  -- {
+  --   "EtiamNullam/gradual-undo.nvim",
+  --   config = function()
+  --     require("gradual-undo").setup()
+  --   end,
+  -- },
+
   {
     "ntpeters/vim-better-whitespace",
     config = function()
