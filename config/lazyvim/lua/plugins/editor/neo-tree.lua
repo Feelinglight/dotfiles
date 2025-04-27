@@ -6,6 +6,12 @@ return {
 
     close_if_last_window = true,
 
+    window = {
+      mappings = {
+        ["z"] = "close_all_subnodes",
+      },
+    },
+
     filesystem = {
       -- bind_to_cwd = true,
       follow_current_file = {
