@@ -21,6 +21,8 @@ return {
   },
   keys = {
     { "]g", "<cmd>Gitsigns next_hunk<cr>", desc = "Next Hunk" },
-    { "[g", "<cmd>Gitsigns prev_hunk<cr>", desc = "Next Hunk" },
+    { "[g", "<cmd>Gitsigns prev_hunk<cr>", desc = "Prev Hunk" },
+    -- { "]g", "]h", desc = "Next hunk", remap = true },
+    -- { "[g", "[h", desc = "Prev huhk", remap = true },
   },
 }

@@ -14,21 +14,21 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "set formatoptions-=cro",
 })
 
--- -- Открыть Neo-tree при запуске neovim
--- vim.api.nvim_create_autocmd("VimEnter", {
---   group = augroup("neotree", { clear = true }),
---   desc = "Open Neotree on startup",
---   callback = function()
---     -- Если nvim открыт без аргументов, то будет открыт dashboard. Там neo-tree не показываем
---     if vim.api.nvim_cmd({ cmd = "args" }, { output = true }) == "" then
---       return
---     end
---     -- Без задержки валятся ошибки при открытии файлов
---     vim.defer_fn(function()
---       vim.cmd("Neotree show")
---     end, 100)
---   end,
--- })
+-- Открыть Neo-tree при запуске neovim
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = vim.api.nvim_create_augroup("neotree", { clear = true }),
+  desc = "Open Neotree on startup",
+  callback = function()
+    -- Если nvim открыт без аргументов, то будет открыт dashboard. Там neo-tree не показываем
+    if vim.api.nvim_cmd({ cmd = "args" }, { output = true }) == "" then
+      return
+    end
+    -- Без задержки валятся ошибки при открытии файлов
+    vim.defer_fn(function()
+      vim.cmd("Neotree show")
+    end, 100)
+  end,
+})
 
 -- Автоматическое переключение раскладки в нормальном режиме
 local function check_dbus()
