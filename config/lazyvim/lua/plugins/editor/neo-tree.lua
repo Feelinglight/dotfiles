@@ -26,16 +26,19 @@ return {
     git_status = {
       window = {
         position = "right",
+        width = "30%",
       },
     },
     buffers = {
       window = {
         position = "right",
+        width = "30%",
       },
     },
     document_symbols = {
       window = {
         position = "right",
+        width = "30%",
       },
     },
   },
