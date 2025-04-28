@@ -4,16 +4,13 @@
       stderr: true
 
 - shell:
-    - command:
-        - sudo apt-get install -y
-        - kubuntu-desktop
-        - fontconfig
-        # git
-        - git
-        - git-gui
-        # Виртуализация
-        - virt-manager
-        - virt-viewer
+    - command: sudo apt-get install -y
+        kubuntu-desktop
+        fontconfig
+        git
+        git-gui
+        virt-manager
+        virt-viewer
       description: Install packages
 
     # ibus удаляется для отключения бесполезной иконки EN на панели задач
