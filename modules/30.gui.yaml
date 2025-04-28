@@ -63,5 +63,5 @@
         force: true
     ~/.ideavimrc:
         path: config/ideavimrc
-
+        force: true
 
