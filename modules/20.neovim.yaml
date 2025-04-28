@@ -38,7 +38,7 @@
         force: true
 
 - shell:
-    - command: sudo ln -sf /root/.config/nvim
+    - command: sudo ln -sf "$(realpath ./config/nvim)" /root/.config/nvim"
       description: Copy neovim config for root
 
     - command: nvim --headless "+Lazy! sync" +qa
