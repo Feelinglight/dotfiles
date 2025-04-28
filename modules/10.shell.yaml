@@ -4,21 +4,18 @@
       stderr: true
 
 - shell:
-    - command:
-        - sudo apt-get install -y
-        - git
-        - curl
-        - zsh
-        - bat
-        - tree
-        - zoxide
-        - htop
-        - fzf
-        - openssh-server
-        # python
-        - python3-venv
-        - python3-pip
-
+    - command: sudo apt-get install -y
+        git
+        curl
+        zsh
+        bat
+        tree
+        zoxide
+        htop
+        fzf
+        openssh-server
+        python3-venv
+        python3-pip
       description: Install packages
 
     - command:
@@ -41,5 +38,7 @@
       description: Install zsh-syntax-highlighting
 
 - link:
-    ~/.zshrc: config/zshrc
+    ~/.zshrc:
+      path: config/zshrc
+      force: true
 
