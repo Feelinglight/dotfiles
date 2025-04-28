@@ -6,6 +6,7 @@
 - shell:
     - command: sudo apt-get install -y
         kubuntu-desktop
+        curl
         fontconfig
         git
         git-gui
