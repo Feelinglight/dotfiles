@@ -4,8 +4,6 @@
       stderr: true
 
 - shell:
-    - command:
-        - sudo apt-get install -y
-        - remmina
+    - command: sudo apt-get install -y remmina
       description: Install packages
 
