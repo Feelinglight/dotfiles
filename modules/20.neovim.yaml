@@ -4,22 +4,20 @@
       stderr: true
 
 - shell:
-    - command:
-        - sudo apt-get install -y
-        - git
-        - curl
-        - luarocks
-        - npm
-        - libfuse2
-        - g++
-        - ripgrep
-        - fd-find
-        - fzf
-        # Для переключения на английский при выходе в normal mode
-        - xclip
-        # Для плагинов на питоне
-        - python3-venv
-        - python3-pip
+    - command: sudo apt-get install -y
+        git
+        curl
+        luarocks
+        npm
+        libfuse2
+        g++
+        ripgrep
+        fd-find
+        fzf
+        xclip
+        Для плагинов на питоне
+        python3-venv
+        python3-pip
       description: Install packages
 
     # Некоторые плагины neovim (lsp bashls, cspell) хотят новую версию npm.
@@ -37,9 +35,10 @@
 - link:
     ~/.config/nvim:
         path: config/nvim
+        force: true
 
 - shell:
-    - command: sudo ln -s /root/.config/nvim
+    - command: sudo ln -sf /root/.config/nvim
       description: Copy neovim config for root
 
     - command: nvim --headless "+Lazy! sync" +qa
