@@ -28,6 +28,13 @@ require("lazy").setup({
     { import = "plugins.editor" },
     { import = "plugins.formatting" },
     { import = "plugins.linting" },
+    { import = "plugins.lsp" },
+    -- lang
+    { import = "plugins.lang.lua" },
+    { import = "plugins.lang.other" },
+    { import = "plugins.lang.python" },
+    { import = "plugins.lang.yaml" },
+
     { import = "plugins.other" },
     { import = "plugins.treesitter" },
     { import = "plugins.ui" },
