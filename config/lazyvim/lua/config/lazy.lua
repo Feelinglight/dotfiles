@@ -28,7 +28,9 @@ require("lazy").setup({
     { import = "plugins.editor" },
     { import = "plugins.formatting" },
     { import = "plugins.linting" },
-    { import = "plugins.lsp" },
+    -- lsp
+    { import = "plugins.lsp.nvim-lspconfig" },
+    { import = "plugins.lsp.mason" },
     -- lang
     { import = "plugins.lang.lua" },
     { import = "plugins.lang.other" },

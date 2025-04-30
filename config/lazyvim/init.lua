@@ -6,8 +6,8 @@ require("config.lazy")
 ------ editor.lua +
 
 ------ formatting.lua -
------- linting.lua -
------- lsp/ -
+------ linting.lua +
+------ lsp/ +
 
 ------ other.lua +
 ------ treesitter.lua +
