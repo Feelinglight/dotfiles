@@ -60,9 +60,7 @@ return {
     enable = false,
     opts = {
       servers = {
-        pyright = {
-          enabled = false,
-        },
+        pyright = {},
         ruff = {},
       },
     },
