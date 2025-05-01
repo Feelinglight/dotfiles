@@ -1,9 +1,20 @@
 return {
-  "williamboman/mason.nvim",
-  opts = {
-    ensure_installed = {
-      "yamllint",
-      "yaml-language-server",
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "yamllint",
+        "yaml-language-server",
+      },
+    },
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        -- yaml = { "yamllint" },
+      },
     },
   },
 

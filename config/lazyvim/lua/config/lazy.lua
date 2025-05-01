@@ -32,6 +32,7 @@ require("lazy").setup({
     { import = "plugins.lsp.nvim-lspconfig" },
     { import = "plugins.lsp.mason" },
     -- lang
+    { import = "plugins.lang.cpp" },
     { import = "plugins.lang.lua" },
     { import = "plugins.lang.other" },
     { import = "plugins.lang.python" },

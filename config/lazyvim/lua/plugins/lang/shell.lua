@@ -3,18 +3,29 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "stylua",
+        "shfmt",
+        "shellcheck",
       },
     },
   },
 
   {
     "neovim/nvim-lspconfig",
+    enable = false,
     opts = {
       servers = {
-        lua_ls = {
-          settings = {
-            Lua = {},
+        bashls = {},
+      },
+    },
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        cpp = {
+          sh = {
+            "shellcheck",
           },
         },
       },
@@ -26,7 +37,7 @@ return {
       "stevearc/conform.nvim",
       opts = {
         formatters_by_ft = {
-          lua = { "stylua" },
+          sh = { "shfmt" },
         },
       },
     },

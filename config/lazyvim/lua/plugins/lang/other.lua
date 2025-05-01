@@ -1,13 +1,31 @@
+-- mason: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+-- nvim-lspconfig: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+-- nvim-lint: https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
+-- conform: https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
+
+-- Все линтеры/форматтеры/lsp должны быть установлены через mason , либо вручную, если в
+-- Mason их установка не поддерживается!!!
+
 return {
-  "williamboman/mason.nvim",
-  opts = {
-    ensure_installed = {
-      "shfmt",
-      "yamllint",
-      "cmakelint",
-      "shellcheck",
-      "yaml-language-server",
-      "esbonio",
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        -- ast-grep
+        -- html
+        -- jinja
+        -- json
+        -- lsp_ai
+        -- markdown
+        -- nginx
+        -- sql
+        -- systemd
+        -- yaml
+        -- clang-tidy
+        -- cspell https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#customize-built-in-linters:~:text=You%20can%20also%20post%2Dprocess%20the%20diagnostics%20produced%20by%20a%20linter%20by%20wrapping%20it.%20For%20example%2C%20to%20change%20the%20severity%20of%20all%20diagnostics%20created%20by%20cspell%3A
+
+        "esbonio",
+      },
     },
   },
 
@@ -16,9 +34,6 @@ return {
     opts = {
 
       servers = {
-        -- shell
-        bashls = {},
-
         -- Plain
         marksman = {},
         esbonio = {},
@@ -26,11 +41,6 @@ return {
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#docker_compose_language_service
         -- docker_compose_language_service = {},
         -- dockerls = {},
-
-        -- C++
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
-        clangd = {},
-        cmake = {},
       },
     },
   },
@@ -39,13 +49,6 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
-        -- Все линтеры должны быть установлены через mason в lsp.lua, либо вручную, если в
-        -- Mason их установка не поддерживается!!!
-        -- cpp = { "clangtidy" },
-        -- yaml = { "yamllint" },
-        -- cmake = { "cmakelint" },
-        -- sh = { "shellcheck" },
-
         -- Use the "*" filetype to run linters on all filetypes.
         ["*"] = {},
       },
@@ -55,10 +58,8 @@ return {
   {
     {
       "stevearc/conform.nvim",
-      ---@type conform.setupOpts
       opts = {
         formatters_by_ft = {
-          sh = { "shfmt" },
           fish = { "fish_indent" },
         },
         formatters = {

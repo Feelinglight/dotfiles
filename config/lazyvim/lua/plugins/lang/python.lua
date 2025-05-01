@@ -1,8 +1,8 @@
 -- Копия линтера mypy, но убирает подчеркивание всего тела функции, подчеркивается только первая
 -- строка сигнатуры
 local function pretty_mypy_linter()
-  local pattern = "([^:]+):(%d+):(%d+):(%d+):(%d+): (%a+): (.*)"
-  local groups = { "file", "lnum", "col", "end_lnum", "end_col", "severity", "message" }
+  local pattern = "([^:]+):(%d+):(%d+):(%d+):(%d+): (%a+): (.*) %[(%a[%a-]+)%]"
+  local groups = { "file", "lnum", "col", "end_lnum", "end_col", "severity", "message", "code" }
   local severities = {
     error = vim.diagnostic.severity.ERROR,
     warning = vim.diagnostic.severity.WARN,
@@ -12,12 +12,12 @@ local function pretty_mypy_linter()
   return {
     cmd = "mypy",
     stdin = false,
+    stream = "both",
     ignore_exitcode = true,
     args = {
-      -- '--strict',
+      -- "--strict",
       "--show-column-numbers",
       "--show-error-end",
-      "--hide-error-codes",
       "--hide-error-context",
       "--no-color-output",
       "--no-error-summary",
@@ -43,11 +43,14 @@ end
 
 return {
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "mypy",
-        "ruff",
+    {
+      "williamboman/mason.nvim",
+      opts = {
+        ensure_installed = {
+          "pyright",
+          "mypy",
+          "ruff",
+        },
       },
     },
   },
@@ -57,7 +60,9 @@ return {
     enable = false,
     opts = {
       servers = {
-        pyright = {},
+        pyright = {
+          enabled = false,
+        },
         ruff = {},
       },
     },
@@ -67,11 +72,26 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
-        python = { "mypy" },
+        python = { "pretty_mypy" },
       },
-      -- linters = {
-      -- pretty_mypy = pretty_mypy_linter(),
-      -- },
+      linters = {
+        pretty_mypy = pretty_mypy_linter(),
+      },
+    },
+  },
+
+  {
+    {
+      "stevearc/conform.nvim",
+      opts = {
+        formatters_by_ft = {
+          python = {
+            "ruff_fix",
+            "ruff_format",
+            "ruff_organize_imports",
+          },
+        },
+      },
     },
   },
 }
