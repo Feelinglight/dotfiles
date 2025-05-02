@@ -142,5 +142,8 @@ map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
 { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
 { "<leader>ss", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Resume" },
+
+-- snippets
+https://github.com/rafamadriz/friendly-snippets/wiki
 ```
 

@@ -22,6 +22,8 @@ return {
         visible = true,
       },
       use_libuv_file_watcher = true,
+      -- Иначе neovim зависает на неопределенное время в папках где больше 1000 файлов
+      async_directory_scan = "always",
     },
     git_status = {
       window = {
