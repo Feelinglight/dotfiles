@@ -16,12 +16,12 @@ run_dotbot () {
   "$BASEDIR/$DOTBOT_DIR/$DOTBOT_BIN" -d "$BASEDIR" -c "$config"
 }
 
-sudo apt-get update
+# sudo apt-get update
 
-run_dotbot 'modules/10.shell.yaml'
-run_dotbot 'modules/20.neovim.yaml'
-run_dotbot 'modules/30.gui.yaml'
-run_dotbot 'modules/80.home.yaml'
-run_dotbot 'modules/90.work.yaml'
+# run_dotbot 'modules/10.shell.yaml'
+# run_dotbot 'modules/20.neovim.yaml'
+# run_dotbot 'modules/30.gui.yaml'
+# run_dotbot 'modules/80.home.yaml'
+# run_dotbot 'modules/90.work.yaml'
 run_dotbot 'modules/99.test.yaml'
 
