@@ -4,6 +4,7 @@
 
 ; function/method docstring
 ; inject ReStructuredText
+
 (function_definition
   body: (block .
     (expression_statement
