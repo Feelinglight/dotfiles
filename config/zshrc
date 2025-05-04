@@ -121,6 +121,11 @@ autovenv() {
             return
         fi
 
+        if [ -f "$current_dir/.venv/bin/activate" ]; then
+            source "$current_dir/.venv/bin/activate"
+            return
+        fi
+
         if [ "$current_dir" = "/" ]; then
             break
         fi
