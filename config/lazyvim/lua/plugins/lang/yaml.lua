@@ -3,7 +3,6 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "yamllint",
         "yaml-language-server",
       },
     },
@@ -48,8 +47,8 @@ return {
                 ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "**/*compose.yaml",
               },
               schemaStore = {
-                url = "https://www.schemastore.org/api/json/catalog.json",
                 enable = true,
+                url = "https://www.schemastore.org/api/json/catalog.json",
               },
             },
           },

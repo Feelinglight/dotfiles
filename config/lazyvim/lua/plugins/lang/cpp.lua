@@ -8,6 +8,7 @@ return {
         "cpplint",
         "cmakelint",
         "cmakelang",
+        "codelldb",
       },
     },
   },
@@ -17,9 +18,13 @@ return {
     enable = false,
     opts = {
       servers = {
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
-        clangd = {},
+        clangd = {
+          keys = {
+            { "<leader>h", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+          },
+        },
         cmake = {},
+        neocmake = {},
       },
     },
   },

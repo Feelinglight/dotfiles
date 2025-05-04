@@ -14,17 +14,13 @@ return {
         -- ast-grep
         -- html
         -- jinja
-        -- json
         -- lsp_ai
-        -- markdown
         -- nginx
         -- sql
         -- systemd
-        -- yaml
-        -- clang-tidy
-        -- cspell https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#customize-built-in-linters:~:text=You%20can%20also%20post%2Dprocess%20the%20diagnostics%20produced%20by%20a%20linter%20by%20wrapping%20it.%20For%20example%2C%20to%20change%20the%20severity%20of%20all%20diagnostics%20created%20by%20cspell%3A
 
         "esbonio",
+        "marksman",
       },
     },
   },
