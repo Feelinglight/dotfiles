@@ -43,6 +43,7 @@ return {
       "meson",
       "nasm",
       "nginx",
+      "ninja",
       "nix",
       "powershell",
       "printf",
