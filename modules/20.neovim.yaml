@@ -15,7 +15,6 @@
         fd-find
         fzf
         xclip
-        Для плагинов на питоне
         python3-venv
         python3-pip
       description: Install packages
@@ -40,7 +39,7 @@
         force: true
 
 - shell:
-    - command: sudo ln -sf "$(realpath ./config/nvim)" /root/.config/nvim"
+    - command: sudo ln -sf "$(realpath ./config/nvim)" /root/.config/nvim
       description: Copy neovim config for root
 
     - command: nvim --headless "+Lazy! sync" +qa
