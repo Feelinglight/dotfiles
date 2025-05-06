@@ -1,10 +1,15 @@
 return {
   "gbprod/yanky.nvim",
-  recommended = true,
-  desc = "Better Yank/Paste",
-  event = "LazyFile",
+  -- Завешивает neovim, поэтому выключен. Может когда-нибудь исправят
+  -- Как проверить: включить плагин -> открыть любой файл -> заблокировать экран -> разблокировать
+  --  экран -> neovim завис
+  -- Похожее issue: https://github.com/gbprod/yanky.nvim/issues/37
+  enabled = false,
   opts = {
     highlight = { timer = 150 },
+    system_clipboard = {
+      sync_with_ring = true,
+    },
   },
   keys = function()
     return {
