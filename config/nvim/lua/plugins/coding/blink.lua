@@ -68,6 +68,8 @@ return {
       preset = "super-tab",
       ["<C-y>"] = { "select_and_accept" },
       ["<C-j>"] = { "select_next", "fallback" },
+      -- close menu and not leave Insert mode
+      ["<Esc>"] = { "hide", "fallback" },
     },
   },
 }
