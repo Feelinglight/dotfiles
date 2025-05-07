@@ -4,7 +4,7 @@ return {
     completion = {
       documentation = {
         auto_show = true,
-        auto_show_delay_ms = 200,
+        auto_show_delay_ms = 500,
       },
       ghost_text = {
         -- enabled = vim.g.ai_cmp,
@@ -69,7 +69,7 @@ return {
       ["<C-y>"] = { "select_and_accept" },
       ["<C-j>"] = { "select_next", "fallback" },
       -- close menu and not leave Insert mode
-      ["<Esc>"] = { "hide", "fallback" },
+      ["<C-x>"] = { "hide", "fallback" },
     },
   },
 }
