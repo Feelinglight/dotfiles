@@ -23,6 +23,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.yanky" },
     { import = "lazyvim.plugins.extras.dap" },
     { import = "lazyvim.plugins.extras.editor.illuminate" },
+    -- Выключен потому что поле ввода работает только в режиме insert
     -- { import = "lazyvim.plugins.extras.editor.inc-rename" },
     { import = "lazyvim.plugins.extras.editor.neo-tree" },
     { import = "lazyvim.plugins.extras.editor.telescope" },
@@ -37,6 +38,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
     { import = "plugins.coding" },
+    { import = "plugins.dap" },
     { import = "plugins.editor" },
     { import = "plugins.formatting" },
     { import = "plugins.linting" },
