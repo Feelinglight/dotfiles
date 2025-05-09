@@ -1,4 +1,4 @@
--- mason: https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+-- mason: <Space>cm
 -- nvim-lspconfig: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 -- nvim-lint: https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
 -- conform: https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
