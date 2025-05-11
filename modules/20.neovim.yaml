@@ -39,12 +39,13 @@
         force: true
 
 - shell:
-    - command: sudo ln -sf "$(realpath ./config/nvim)" /root/.config/nvim
-      description: Copy neovim config for root
-
     - command: nvim --headless "+Lazy! sync" +qa
       description: Install lazy plugins
 
-    - command: sudo nvim --headless "+Lazy! sync" +qa
-      description: Install lazy plugins for root
+    # FIXME: сделать отдельный clone конфига для рута
+    # - command: sudo ln -sf "$(realpath ./config/nvim)" /root/.config/nvim
+      # description: Copy neovim config for root
+      
+    # - command: sudo nvim --headless "+Lazy! sync" +qa
+      # description: Install lazy plugins for root
 
