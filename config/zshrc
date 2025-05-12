@@ -159,6 +159,7 @@ alias dolc="nohup dolphin . > /dev/null 2>&1 &!"
 
 alias pyv="python3 -m venv venv"
 alias ur="uv run"
+alias upi="uv pip install"
 
 alias cat="batcat -pp"
 
