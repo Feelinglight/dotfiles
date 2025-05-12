@@ -2,4 +2,7 @@
 
 - В адресной строке: ``about:config``
 
-  - **zen.urlbar.replace-newtab** = false (https://github.com/zen-browser/desktop/issues/5109)
+  - При открытии новой вкладки [открывать отдельную вкладку](https://github.com/zen-browser/desktop/issues/5109)
+    вместо фокуса на адресную строку
+
+    **zen.urlbar.replace-newtab** = false
