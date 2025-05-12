@@ -6,3 +6,7 @@
     вместо фокуса на адресную строку
 
     **zen.urlbar.replace-newtab** = false
+
+- [Закрывать браузер если закрвыается последняя вкладка](https://github.com/zen-browser/desktop/issues/2537)
+
+  **browser.tabs.closeWindowWithLastTab** = true
