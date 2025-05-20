@@ -11,7 +11,7 @@
 
 -- Отключение автоматических комментов при переходе на новую строку
 vim.api.nvim_create_autocmd("FileType", {
-  command = "set formatoptions-=cro",
+  command = "set formatoptions-=t | set formatoptions-=c | set formatoptions-=r | set formatoptions-=o",
 })
 
 -- Открыть Neo-tree при запуске neovim
