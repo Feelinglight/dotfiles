@@ -157,7 +157,7 @@ alias clionc="nohup clion . > /dev/null 2>&1 &!"
 alias dol="nohup dolphin > /dev/null 2>&1 &!"
 alias dolc="nohup dolphin . > /dev/null 2>&1 &!"
 
-alias pyv="python3 -m venv venv"
+alias uvv="uv venv"
 alias ur="uv run"
 alias upi="uv pip install"
 
