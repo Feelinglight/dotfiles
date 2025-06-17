@@ -21,6 +21,7 @@ return {
 
         "esbonio",
         "marksman",
+        "hadolint",
       },
     },
   },
@@ -45,6 +46,9 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
+        dockerfile = {
+          "hadolint",
+        },
         -- Use the "*" filetype to run linters on all filetypes.
         ["*"] = {},
       },
