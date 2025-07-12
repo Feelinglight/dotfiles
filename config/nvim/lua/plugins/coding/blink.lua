@@ -1,5 +1,6 @@
 return {
   "saghen/blink.cmp",
+  tag = "v1.3.1",
   opts = {
     completion = {
       documentation = {
