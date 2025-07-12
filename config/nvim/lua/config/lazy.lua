@@ -32,6 +32,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.cmake" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.python" },
+    -- vscode
+    { import = "lazyvim.plugins.extras.vscode" },
 
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     -- { import = "lazyvim.plugins.extras.util.gitui" },
