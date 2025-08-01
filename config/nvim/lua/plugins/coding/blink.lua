@@ -1,6 +1,6 @@
 return {
   "saghen/blink.cmp",
-  tag = "v1.3.1",
+  -- tag = "v1.3.1",
   opts = {
     completion = {
       documentation = {
@@ -34,7 +34,13 @@ return {
     cmdline = {
       enabled = true,
       keymap = {
-        preset = "inherit",
+        -- preset = "inherit",
+        preset = "super-tab",
+        ["<Tab>"] = {
+          require("blink.cmp.keymap.presets").get("super-tab")["<Tab>"][1],
+          require("lazyvim.util.cmp").map({ "snippet_forward", "ai_accept" }),
+          "fallback",
+        },
       },
       sources = function()
         local type = vim.fn.getcmdtype()
