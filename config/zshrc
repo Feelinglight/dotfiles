@@ -142,3 +142,7 @@ alias cat="batcat -pp"
 # Чтобы rm -rf * не задавал вопросов
 setopt localoptions rmstarsilent
 
+# Для раскрытия динамических целей make
+zstyle ':completion:*:make:*:targets' call-command true
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+
