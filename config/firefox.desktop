@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Firefox Web Browser
+Exec=/usr/bin/firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/usr/share/icons/hicolor/128x128/apps/firefox.png
+Categories=Application;Internet;Network;WebBrowser;
+# MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+StartupWMClass=Firefox
+StartupNotify=true
