@@ -11,7 +11,8 @@
 
   **browser.tabs.closeWindowWithLastTab** = true
 
-- Открывать новые вкладки ниже текущей
+- Создавать новые вкладки ниже текущей
 
-  **browser.tabs.insertRelatedAfterCurrent** = false
-  **browser.tabs.insertAfterCurrent** = true
+  - **browser.tabs.insertRelatedAfterCurrent** = false
+  - **browser.tabs.insertAfterCurrent** = true
+
