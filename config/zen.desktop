@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Zen Browser
+Exec=/usr/local/bin/zen %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/zen/browser/chrome/icons/default/default128.png
+Categories=Application;Internet;Network;WebBrowser;
+# MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;
+# StartupWMClass=Firefox
+StartupNotify=true
