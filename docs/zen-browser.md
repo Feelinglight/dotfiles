@@ -10,3 +10,8 @@
 - [Закрывать браузер если закрвыается последняя вкладка](https://github.com/zen-browser/desktop/issues/2537)
 
   **browser.tabs.closeWindowWithLastTab** = true
+
+- Открывать новые вкладки ниже текущей
+
+  **browser.tabs.insertRelatedAfterCurrent** = false
+  **browser.tabs.insertAfterCurrent** = true
