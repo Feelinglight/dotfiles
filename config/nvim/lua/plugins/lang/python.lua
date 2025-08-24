@@ -8,6 +8,7 @@ local function pretty_mypy_linter()
     warning = vim.diagnostic.severity.WARN,
     note = vim.diagnostic.severity.HINT,
   }
+  local unpack_foo = unpack or table.unpack
 
   return {
     cmd = "mypy",
@@ -24,7 +25,7 @@ local function pretty_mypy_linter()
       "--no-pretty",
     },
     parser = function(output, bufnr, linter_cwd)
-      local current_groups = { table.unpack(groups) }
+      local current_groups = { unpack_foo(groups) }
       -- Если будут другие проблемы с подсветкой, то добавлять их сюда
       if output:find("Function") ~= nil then
         -- Если убрать правильное имя из groups, то подчеркиваться будет одна строка
