@@ -8,6 +8,6 @@ vim.filetype.add({
     [".yamlfmt"] = "yaml",
   },
   pattern = {
-    ["%.env%.[%w_.-]+"] = "dotenv",
+    ["Dockerfile.*"] = "dockerfile",
   },
 })
