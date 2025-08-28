@@ -25,6 +25,6 @@ map({ "i", "n", "s" }, "<esc>", function()
   return "<esc>"
 end, { expr = true, desc = "Escape snippet" })
 
-map("n", "<leader><tab><tab>", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-
 ------------------- custom -------------------
+
+map({ "v" }, "$", "g_", { desc = "End of line", expr = false, silent = true })
