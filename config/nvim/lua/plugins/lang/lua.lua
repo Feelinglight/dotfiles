@@ -28,6 +28,19 @@ return {
         formatters_by_ft = {
           lua = { "stylua" },
         },
+        formatters = {
+          stylua = {
+            prepend_args = {
+              "--indent-type",
+              "Spaces",
+              "--indent-width",
+              "2",
+              "--column-width",
+              "100",
+            },
+            indent_type = "Spaces",
+          },
+        },
       },
     },
   },
