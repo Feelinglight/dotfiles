@@ -1,6 +1,6 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "clangd",
@@ -20,7 +20,11 @@ return {
       servers = {
         clangd = {
           keys = {
-            { "<leader>h", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+            {
+              "<leader>h",
+              "<cmd>ClangdSwitchSourceHeader<cr>",
+              desc = "Switch Source/Header (C/C++)",
+            },
           },
         },
         cmake = {},

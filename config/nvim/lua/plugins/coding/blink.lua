@@ -66,12 +66,6 @@ return {
 
     keymap = {
       preset = "super-tab",
-      -- workaround https://github.com/LazyVim/LazyVim/issues/6185
-      ["<Tab>"] = {
-        require("blink.cmp.keymap.presets").get("super-tab")["<Tab>"][1],
-        require("lazyvim.util.cmp").map({ "snippet_forward", "ai_accept" }),
-        "fallback",
-      },
       ["<C-y>"] = { "select_and_accept" },
       ["<C-j>"] = { "select_next", "fallback" },
       -- close menu and not leave Insert mode
