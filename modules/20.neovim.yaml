@@ -24,7 +24,7 @@
     - command: |
         sudo npm install -g n &&
         sudo n lts
-        npm install --global @ast-grep/cli
+        sudo npm install --global @ast-grep/cli
       description: Update npm
 
     - command: |
