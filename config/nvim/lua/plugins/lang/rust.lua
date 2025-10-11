@@ -11,12 +11,12 @@ return {
     },
   },
 
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   opts = {
-  --     rust_analyzer = {},
-  --   },
-  -- },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      rust_analyzer = { enable = true },
+    },
+  },
 
   {
     "mfussenegger/nvim-lint",
@@ -36,5 +36,13 @@ return {
         },
       },
     },
+  },
+
+  {
+    "saecki/crates.nvim",
+    tag = "stable",
+    config = function()
+      require("crates").setup()
+    end,
   },
 }
