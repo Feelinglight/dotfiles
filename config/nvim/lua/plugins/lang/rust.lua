@@ -11,6 +11,13 @@ return {
     },
   },
 
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     rust_analyzer = {},
+  --   },
+  -- },
+
   {
     "mfussenegger/nvim-lint",
     opts = {
