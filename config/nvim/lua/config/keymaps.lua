@@ -29,3 +29,4 @@ end, { expr = true, desc = "Escape snippet" })
 
 map({ "v" }, "$", "g_", { desc = "End of line", expr = false, silent = true })
 map({ "i" }, "<C-p>", "<C-r>0", { desc = "Insert yank register content" })
+map({ "n" }, "<C-l>", ":noh<CR><C-l>", { noremap = true })
