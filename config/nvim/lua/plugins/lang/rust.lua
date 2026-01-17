@@ -4,25 +4,8 @@ return {
       "mason-org/mason.nvim",
       opts = {
         ensure_installed = {
-          "rust-analyzer",
           "rustfmt",
         },
-      },
-    },
-  },
-
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      rust_analyzer = { enable = true },
-    },
-  },
-
-  {
-    "mfussenegger/nvim-lint",
-    opts = {
-      linters_by_ft = {
-        -- rust = { "clippy" },
       },
     },
   },
@@ -39,33 +22,89 @@ return {
   },
 
   {
-    "mfussenegger/nvim-dap",
-    optional = true,
-    opts = function()
-      -- Debug settings
-      local dap = require("dap")
-      dap.configurations.rust = {
-        {
-          name = "Launch bin",
-          type = "codelldb",
-          request = "launch",
-          program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
-          end,
-          cwd = "${workspaceFolder}",
-          stopOnEntry = false,
-          args = {},
-          -- runInTerminal = false,
+    "mrcjkb/rustaceanvim",
+    enable = true,
+    version = "^6",
+    lazy = false, -- This plugin is already lazy
+    init = function()
+      vim.g.rustaceanvim = {
+        server = {
+          -- capabilities взяты из rust-analyzer от nvim-lspconfig
+          -- основная причина - опция insertReplaceSupport. Если установить ее в true, то
+          -- автокомплит не будет заменять текст после курсора
+          capabilities = {
+            textDocument = {
+              completion = {
+                completionItem = {
+                  commitCharactersSupport = false,
+                  deprecatedSupport = true,
+                  documentationFormat = { "markdown", "plaintext" },
+                  insertReplaceSupport = true,
+                  insertTextModeSupport = {
+                    valueSet = { 1 },
+                  },
+                  labelDetailsSupport = true,
+                  preselectSupport = false,
+                  resolveSupport = {
+                    properties = {
+                      "documentation",
+                      "detail",
+                      "additionalTextEdits",
+                      "command",
+                      "data",
+                    },
+                  },
+                  snippetSupport = true,
+                  tagSupport = {
+                    valueSet = { 1 },
+                  },
+                },
+                completionItemKind = {
+                  valueSet = {
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                  },
+                },
+                completionList = {
+                  itemDefaults = {
+                    "commitCharacters",
+                    "editRange",
+                    "insertTextFormat",
+                    "insertTextMode",
+                    "data",
+                  },
+                },
+                contextSupport = true,
+                dynamicRegistration = false,
+                insertTextMode = 1,
+              },
+            },
+          },
         },
       }
-    end,
-  },
-
-  {
-    "saecki/crates.nvim",
-    tag = "stable",
-    config = function()
-      require("crates").setup({})
     end,
   },
 }
