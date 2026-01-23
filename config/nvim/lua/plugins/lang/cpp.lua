@@ -19,6 +19,15 @@ return {
     opts = {
       servers = {
         clangd = {
+          cmd = {
+            "clangd",
+            "--background-index",
+            "--clang-tidy",
+            "--completion-style=detailed",
+            "--header-insertion=never",
+            -- TODO: Сделать автоматический выбор query-driver
+            "--query-driver=/usr/bin/arm-none-eabi-*",
+          },
           keys = {
             {
               "<leader>h",
