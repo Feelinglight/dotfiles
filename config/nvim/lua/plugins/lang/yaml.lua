@@ -22,6 +22,11 @@ return {
     opts = {
       servers = {
         yamlls = {
+          filetypes = {
+            "yaml",
+            "yml",
+            "yaml.openapi",
+          },
           -- Have to add this for yamlls to understand that we support line folding
           capabilities = {
             textDocument = {
@@ -45,6 +50,7 @@ return {
               },
               schemas = {
                 ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "**/*compose.yaml",
+                ["https://www.schemastore.org/openapi-3.X.json"] = "**/*openapi*.y*ml",
               },
               schemaStore = {
                 enable = true,
