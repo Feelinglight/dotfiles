@@ -35,6 +35,13 @@ return {
         -- Plain
         marksman = {},
         esbonio = {},
+        jsonls = {
+          filetypes = {
+            "json",
+            "jsonc",
+            "json.openapi",
+          },
+        },
 
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#docker_compose_language_service
         -- docker_compose_language_service = {},
