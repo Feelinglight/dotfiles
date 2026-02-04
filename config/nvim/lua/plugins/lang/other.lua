@@ -22,6 +22,7 @@ return {
         "esbonio",
         "marksman",
         "hadolint",
+        "vacuum",
       },
     },
   },

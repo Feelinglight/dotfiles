@@ -9,5 +9,7 @@ vim.filetype.add({
   },
   pattern = {
     ["Dockerfile.*"] = "dockerfile",
+    ["openapi.*%.ya?ml"] = "yaml.openapi",
+    ["openapi.*%.json"] = "json.openapi",
   },
 })
