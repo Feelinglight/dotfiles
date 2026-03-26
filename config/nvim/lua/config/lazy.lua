@@ -34,6 +34,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.rust" },
+    -- ai
+    { import = "lazyvim.plugins.extras.ai.claudecode" },
     -- vscode
     { import = "lazyvim.plugins.extras.vscode" },
 
