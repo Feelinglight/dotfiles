@@ -16,6 +16,17 @@ vim.keymap.del("n", "<Space>dpp")
 vim.keymap.del("n", "<Space>dph")
 vim.keymap.del("n", "<Space>dps")
 
+--claudecode, переназначены на "k" вместо "a"
+vim.keymap.del({ "n", "v" }, "<Space>a")
+vim.keymap.del("n", "<Space>ac")
+vim.keymap.del("n", "<Space>af")
+vim.keymap.del("n", "<Space>ar")
+vim.keymap.del("n", "<Space>aC")
+vim.keymap.del("n", "<Space>ab")
+vim.keymap.del("v", "<Space>as")
+vim.keymap.del("n", "<Space>aa")
+vim.keymap.del("n", "<Space>ad")
+
 ------------------- changed -------------------
 
 -- Clear search and stop snippet on escape
