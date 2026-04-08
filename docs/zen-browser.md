@@ -16,3 +16,6 @@
   - **browser.tabs.insertRelatedAfterCurrent** = false
   - **browser.tabs.insertAfterCurrent** = true
 
+- Не открывать вкладки в новом окне
+
+  **zen.window-sync.enabled** = false
