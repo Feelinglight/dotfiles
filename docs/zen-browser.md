@@ -16,6 +16,6 @@
   - **browser.tabs.insertRelatedAfterCurrent** = false
   - **browser.tabs.insertAfterCurrent** = true
 
-- Не открывать вкладки в новом окне
+- [Не открывать вкладки в новом окне](https://www.reddit.com/r/zen_browser/comments/1qoq9lb/how_to_turn_off_window_sync/)
 
   **zen.window-sync.enabled** = false
