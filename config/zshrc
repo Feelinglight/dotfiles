@@ -146,3 +146,8 @@ setopt localoptions rmstarsilent
 zstyle ':completion:*:make:*:targets' call-command true
 zstyle ':completion:*:*:make:*' tag-order 'targets'
 
+unset SSH_ASKPASS
+export SSH_ASKPASS_REQUIRE=never
+
+unset GIT_ASKPASS
+export GIT_ASKPASS_REQUIRE=never
