@@ -19,3 +19,7 @@
 - [Не открывать вкладки в новом окне](https://www.reddit.com/r/zen_browser/comments/1qoq9lb/how_to_turn_off_window_sync/)
 
   **zen.window-sync.enabled** = false
+
+- [Открывать следующую по порядку вкладку при закрытии текущей](https://www.reddit.com/r/zen_browser/comments/1qt1nce/how_do_i_fix_the_tab_order_so_that_when_i_close_a/)
+
+  **zen.tabs.select-recently-used-on-close** = false
