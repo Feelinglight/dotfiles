@@ -5,7 +5,6 @@
 
 - shell:
     - command: sudo apt-get install -y
-        kubuntu-desktop
         curl
         fontconfig
         git
@@ -44,15 +43,10 @@
       description: Install clion
 
     - command: curl -L -o vscode.deb
-        https://vscode.download.prss.microsoft.com/dbazure/download/stable/17baf841131aa23349f217ca7c570c76ee87b957/code_1.99.3-1744761595_amd64.deb &&
-        sudo dpkg -i vscode.deb &&
-        sudo rm -rf vscode.deb
+        https://vscode.download.prss.microsoft.com/dbazure/download/stable/17baf841131aa23349f217ca7c570c76ee87b957/code_1.99.3-1744761595_amd64.deb
       description: Install clion
 
 - link:
-    ~/.zshrc:
-      path: config/zshrc
-      force: true
     ~/.ideavimrc:
       path: config/ideavimrc
       force: true

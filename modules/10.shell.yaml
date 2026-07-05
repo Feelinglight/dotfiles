@@ -25,6 +25,9 @@
         "" --unattended
       description: Install Oh-My-Zsh
 
+    - command: wget -qO- https://astral.sh/uv/install.sh | sh
+      description: Install uv
+
     - command: sudo chsh -s /usr/bin/zsh "$(whoami)"
       description: Change shell to zsh
 
@@ -42,4 +45,3 @@
     ~/.zshrc:
       path: config/zshrc
       force: true
-
