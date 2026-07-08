@@ -14,7 +14,7 @@
         ripgrep
         fd-find
         fzf
-        xclip
+        wl-clipboard
         python3-venv
         python3-pip
       description: Install packages
