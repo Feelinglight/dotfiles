@@ -1,4 +1,5 @@
 return {
+
   {
     "mason-org/mason.nvim",
     opts = {
@@ -36,7 +37,8 @@ return {
             },
           },
         },
-        cmake = {},
+        -- Требует python < 3.14
+        -- cmake = {},
         neocmake = {},
       },
     },
