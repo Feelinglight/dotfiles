@@ -52,7 +52,7 @@ return {
       { "<leader>hr", gs.reset_hunk, mode = { "n", "x" }, desc = "Reset Hunk" },
 
       { "<leader>hS", gs.stage_buffer, mode = { "n" }, desc = "Stage Buffer" },
-      { "<leader>hu", gs.undo_stage_hunk, mode = { "n" }, desc = "Undo Stage Hunk" },
+      { "<leader>hu", gs.stage_hunk, mode = { "n" }, desc = "Undo Stage Hunk" },
       { "<leader>hR", gs.reset_buffer, mode = { "n" }, desc = "Reset Buffer" },
       { "<leader>hp", gs.preview_hunk_inline, mode = { "n" }, desc = "Preview Hunk Inline" },
 
