@@ -31,27 +31,31 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 -- Автоматическое переключение раскладки в нормальном режиме
-local function check_dbus()
-  local ret = os.execute("qdbus --version > /dev/null 2>&1")
-  if ret == 0 then
-    return true
+local function get_qdbus_util()
+  local check_command = "%s --version > /dev/null 2>&1"
+  if os.execute(string.format(check_command, "qdbus6")) == 0 then
+    return "qdbus6"
+  elseif os.execute(string.format(check_command, "qdbus")) == 0 then
+    return "qdbus"
   else
-    return false
+    return ""
   end
 end
 
-local has_dbus = check_dbus()
 -- Число зависит от настроек KDE, обычно 0
 local ENGLISH_LANGUAGE = 0
+local qdbus_util = get_qdbus_util()
 
-local function set_current_language(language)
-  os.execute(string.format("qdbus org.kde.keyboard /Layouts setLayout %d > /dev/null", language))
+local function set_current_language(language, qdbus_name)
+  os.execute(
+    string.format("%s org.kde.keyboard /Layouts setLayout %d > /dev/null", qdbus_name, language)
+  )
 end
 
 vim.api.nvim_create_autocmd("InsertLeave", {
   callback = function()
-    if has_dbus then
-      set_current_language(ENGLISH_LANGUAGE)
+    if qdbus_util ~= "" then
+      set_current_language(ENGLISH_LANGUAGE, qdbus_util)
     end
   end,
 })
