@@ -10,7 +10,7 @@
   - Редактировать правила
 
     - Порядок правил - Block -> Direct -> Proxy
-    - В Direct:
+    - В Direct добавить:
 
       ```
       irsural.ru
