@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Service
+MimeType=text/*;text/plain;text/markdown;text/x-markdown;application/yaml;application/x-yaml;text/x-yaml;text/yaml;application/json;application/schema+json;application/ld+json;application/toml;application/x-toml;application/xml;text/xml;application/xhtml+xml;text/x-python;text/x-python3;application/x-shellscript;text/rust;text/x-go;text/x-csrc;text/x-chdr;text/x-c++src;text/x-c++hdr;text/x-java;text/x-csharp;text/x-kotlin;text/x-scala;text/x-haskell;text/x-ocaml;text/x-erlang;text/x-elixir;text/javascript;application/javascript;text/html;text/css;text/x-scss;text/x-sass;application/x-php;application/x-ruby;application/x-perl;text/x-lua;application/sql;text/x-makefile;text/x-cmake;text/x-patch;text/csv;text/tab-separated-values;text/x-log;text/x-readme;application/x-desktop;text/x-systemd-unit;text/x-tex;text/x-bibtex;text/x-rst;text/org;application/x-awk;
+Actions=openNvim;
+X-KDE-Priority=TopLevel
+
+[Desktop Action openNvim]
+Name=Edit with Neovim
+Icon=nvim
+Exec=konsole -e nvim %F

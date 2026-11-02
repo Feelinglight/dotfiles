@@ -65,3 +65,7 @@
     ~/.local/share/applications/nvim.desktop:
       path: config/nvim.desktop
       force: true
+    ~/.local/share/kio/servicemenus/edit-with-nvim.desktop:
+      path: config/nvim-context-menu.desktop
+      force: true
+      create: true
