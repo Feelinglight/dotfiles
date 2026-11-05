@@ -30,6 +30,8 @@
         sudo tar xf zen.linux-x86_64.tar.xz -C /opt/ &&
         sudo ln -fs /opt/zen/zen /usr/local/bin/zen
 
+    - command: ./config/zen/setup_zen.sh
+
     - command: curl -L -o google-chrome.deb
         https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
         sudo dpkg -i google-chrome.deb &&
@@ -53,19 +55,20 @@
       description: Install clion
 
 - link:
+    # ----- jetb
     ~/.ideavimrc:
       path: config/ideavimrc
       force: true
-    ~/.local/share/applications/zen.desktop:
-      path: config/zen.desktop
-      force: true
-    ~/.config/zen/user.js:
-      path: config/zen-user.js
-      force: true
+    # ----- nvim
     ~/.local/share/applications/nvim.desktop:
       path: config/nvim.desktop
       force: true
     ~/.local/share/kio/servicemenus/edit-with-nvim.desktop:
       path: config/nvim-context-menu.desktop
+      force: true
+      create: true
+    # ----- zen
+    ~/.local/share/applications/zen.desktop:
+      path: config/zen/zen.desktop
       force: true
       create: true

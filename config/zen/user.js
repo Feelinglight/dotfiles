@@ -21,3 +21,9 @@ user_pref("zen.window-sync.enabled", false);
 // Открывать следующую по порядку вкладку при закрытии текущей
 // https://www.reddit.com/r/zen_browser/comments/1qt1nce/how_do_i_fix_the_tab_order_so_that_when_i_close_a/
 user_pref("zen.tabs.select-recently-used-on-close", false);
+
+// Количество результатов в выпадающем списке подсказок search-bar
+user_pref("browser.urlbar.maxRichResults", 10);
+
+// Включает подгрузку chrome/userChrome.css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
